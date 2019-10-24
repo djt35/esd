@@ -212,7 +212,7 @@ if (count($_GET) > 0){
 			unset($data['identifier']);
 			unset($data['table']);
 
-			$data = array_filter($data, 'rempty');
+			$data = array_filter($data, 'rempty'); //change
 			
 			foreach ($data as $key => $value) {
 	        	$value = "'$value'";
