@@ -203,96 +203,7 @@ Class esdLesion {
      * @param key_table_type $key_row
      * 
      */
-	public function Load_from_key_old($key_row){
-		$result = $this->connection->RunQuery("Select * from esdLesion where _k_lesion = \"$key_row\" ");
-		while($row = $result->fetch_array(MYSQLI_ASSOC)){
-			$this->_k_lesion = $row["_k_lesion"];
-			$this->_k_procedure = $row["_k_procedure"];
-			$this->AGE = $row["AGE"];
-			$this->Ethnicity = $row["Ethnicity"];
-			$this->Dateofprocedure = $row["Dateofprocedure"];
-			$this->Duplicate = $row["Duplicate"];
-			$this->Gender = $row["Gender"];
-			$this->IndicationforESD = $row["IndicationforESD"];
-			$this->Preresectionbiopsydone = $row["Preresectionbiopsydone"];
-			$this->PreresectionHistology = $row["PreresectionHistology"];
-			$this->Scopetype = $row["Scopetype"];
-			$this->Knifetype = $row["Knifetype"];
-			$this->Injectate = $row["Injectate"];
-			$this->Length_min = $row["Length_min"];
-			$this->ASAscore = $row["ASAscore"];
-			$this->GAvssedation = $row["GAvssedation"];
-			$this->Admitted = $row["Admitted"];
-			$this->Complications = $row["Complications"];
-			$this->comp_IPB = $row["comp_IPB"];
-			$this->Prophylaxis_bleed = $row["Prophylaxis_bleed"];
-			$this->comp_perf = $row["comp_perf"];
-			$this->comp_DB = $row["comp_DB"];
-			$this->Mortality = $row["Mortality"];
-			$this->lesionlocation = $row["lesionlocation"];
-			$this->lesionlocationdetail = $row["lesionlocationdetail"];
-			$this->lesion_Paris = $row["lesion_Paris"];
-			$this->ulceration = $row["ulceration"];
-			$this->lesionsize_mm = $row["lesionsize_mm"];
-			$this->En_bloc = $row["En_bloc"];
-			$this->Historemarks = $row["Historemarks"];
-			$this->Numberofresectionspecimens = $row["Numberofresectionspecimens"];
-			$this->Completeendoscopicresectionachieved = $row["Completeendoscopicresectionachieved"];
-			$this->Histology = $row["Histology"];
-			$this->HistologyHGD = $row["HistologyHGD"];
-			$this->Completepathologicalresection_R0 = $row["Completepathologicalresection_R0"];
-			$this->MarginVerticalPos = $row["MarginVerticalPos"];
-			$this->MarginHorizPos = $row["MarginHorizPos"];
-			$this->ClinicalCriteria = $row["ClinicalCriteria"];
-			$this->SurgicalRefBasedonHisto = $row["SurgicalRefBasedonHisto"];
-			$this->SurgDueToFail = $row["SurgDueToFail"];
-			$this->UnderwentSurgeryatIndex = $row["UnderwentSurgeryatIndex"];
-			$this->SurgeryDuringSurveillance = $row["SurgeryDuringSurveillance"];
-			$this->NoSurgerySoSurveillance = $row["NoSurgerySoSurveillance"];
-			$this->DeclinedSurgery = $row["DeclinedSurgery"];
-			$this->AwaitingSurgOutcome = $row["AwaitingSurgOutcome"];
-			$this->WhyDeclinedSurgery = $row["WhyDeclinedSurgery"];
-			$this->SurgResidual = $row["SurgResidual"];
-			$this->SurgLN = $row["SurgLN"];
-			$this->SurgTStage = $row["SurgTStage"];
-			$this->SurgM = $row["SurgM"];
-			$this->SurgNotes = $row["SurgNotes"];
-			$this->SMI = $row["SMI"];
-			$this->SMDepth = $row["SMDepth"];
-			$this->Differentiation = $row["Differentiation"];
-			$this->LVI = $row["LVI"];
-			$this->WhyNoSC1 = $row["WhyNoSC1"];
-			$this->CompletedSE1 = $row["CompletedSE1"];
-			$this->SE_1date = $row["SE_1date"];
-			$this->SE_time_new = $row["SE_time_new"];
-			$this->SE_1endo_Rec_Res = $row["SE_1endo_Rec_Res"];
-			$this->SE_1HISTO_Rec_Res = $row["SE_1HISTO_Rec_Res"];
-			$this->SE_1Treatment = $row["SE_1Treatment"];
-			$this->CompletedSE2 = $row["CompletedSE2"];
-			$this->WhyNoSC2 = $row["WhyNoSC2"];
-			$this->DueSC2 = $row["DueSC2"];
-			$this->ExplainSC2 = $row["ExplainSC2"];
-			$this->SE_2date = $row["SE_2date"];
-			$this->SE_2endo_Rec_Res = $row["SE_2endo_Rec_Res"];
-			$this->SE_2HISTO_Rec_Res = $row["SE_2HISTO_Rec_Res"];
-			$this->SE_2Treatment = $row["SE_2Treatment"];
-			$this->MonthsToSEMostRecent = $row["MonthsToSEMostRecent"];
-			$this->SE_MostRecentdate = $row["SE_MostRecentdate"];
-			$this->SE_MostRecentendo_Rec_Res = $row["SE_MostRecentendo_Rec_Res"];
-			$this->SE_MostRecentHISTO_Rec_Res = $row["SE_MostRecentHISTO_Rec_Res"];
-			$this->SE_MostRecentTreatment = $row["SE_MostRecentTreatment"];
-			$this->clearofdiseaseonlatestSE = $row["clearofdiseaseonlatestSE"];
-			$this->Numberoffollow_upscopes = $row["Numberoffollow_upscopes"];
-			$this->Monthsindextolastscope = $row["Monthsindextolastscope"];
-			$this->Ultimateoutcome = $row["Ultimateoutcome"];
-			$this->FullThicknessPerf = $row["FullThicknessPerf"];
-			$this->Historemarks2 = $row["Historemarks2"];
-			$this->HistologyCriteriaLGDNew = $row["HistologyCriteriaLGDNew"];
-			$this->AdjuvantTreatment = $row["AdjuvantTreatment"];
-			$this->created = $row["created"];
-			$this->updated = $row["updated"];
-		}
-	}
+	
 
 	public function Load_from_key($key_row){
 		$result = $this->connection->RunQuery("Select * from esdLesion where _k_lesion = \"$key_row\" ");
@@ -600,7 +511,8 @@ Class esdLesion {
 
 		//insert command so return the row count
 
-		return $stmt->rowCount();
+		//return $stmt->rowCount();
+		return $this->connection->conn->lastInsertId();
 
 
 	}
@@ -708,7 +620,7 @@ Class esdLesion {
 
 		$q = "UPDATE `esdLesion` SET $implodeArray WHERE _k_lesion = '$this->_k_lesion'";
 
-		echo $q;
+		//echo $q;
 
 		$stmt = $this->connection->RunQuery($q);
 

@@ -24,7 +24,7 @@ Class DataBaseMysqlPDO {
 		    $local = FALSE;
 		}
 		
-		//if ($local){
+		if ($local){
             //echo 'hello';
 
             
@@ -32,8 +32,8 @@ Class DataBaseMysqlPDO {
                 $this->conn = new PDO('mysql:host=127.0.0.1;port=3309;dbname=esdv1;charset=utf8','root','nevira1pine',array(
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 ));
-                var_dump($this->conn);
-                echo "Connected successfully";
+                //var_dump($this->conn);
+                //echo "Connected successfully";
             }catch(PDOException $pe){
                 echo $pe->getMessage();
             }
@@ -44,7 +44,7 @@ Class DataBaseMysqlPDO {
 				//if($this->conn->connect_error){
 				//	echo "Error connect to mysql";die;
 				//}
-		//}else{
+		}else{
 			
 		//	$this->conn = new mysqli("localhost", "djt", "nevira1pine", "esdv1");
 		//		if($this->conn->connect_error){
@@ -52,7 +52,7 @@ Class DataBaseMysqlPDO {
 		//		}
 			
 			
-		//}
+		}
 	}
     
     public function RunQuery ($q){

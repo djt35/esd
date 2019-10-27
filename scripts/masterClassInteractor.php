@@ -182,7 +182,7 @@ if (count($_GET) > 0){
 			}
 		}*/
 
-		print_r($keys);
+		//print_r($keys);
 
         
         //interact with the class
@@ -194,7 +194,7 @@ if (count($_GET) > 0){
         foreach ($data as $key=>$value){
 
             $targetStatement = '$esdLesion->set' . $key . '("' . $value . '");';
-            echo $targetStatement;
+            //echo $targetStatement;
             
             try {
               
@@ -243,7 +243,7 @@ if (count($_GET) > 0){
         foreach ($data as $key=>$value){
 
             $targetStatement = '$esdLesion->set' . $key . '("' . $value . '");';
-            echo $targetStatement;
+            //echo $targetStatement;
             
             try {
               
@@ -275,23 +275,22 @@ if (count($_GET) > 0){
 	}else if ($update == 2){
 		
 		//if this is an delete check the id field exists
-		unset($data['update']);
-		unset($data['identifierKey']);
-		unset($data['identifier']);
-		unset($data['table']);
 		
-		$q = "SELECT `$identifierKey` FROM `$table` WHERE `$identifierKey` = $identifier";
+		
+		//$q = "SELECT `$identifierKey` FROM `$table` WHERE `$identifierKey` = $identifier";
 		
 		//echo $q;
 		
-		if ($general->returnYesNoDBQuery($q) == 1){
+		if ($esdLesion->matchRecord($identifier)){
 			
+            unset($data['update']);
+		    unset($data['identifierKey']);
+		    unset($data['identifier']);
+            unset($data['table']);
+            
+            echo $esdLesion->Delete_row_from_key($identifier);
+            
 			
-			$q = "DELETE FROM `$table` WHERE `$identifierKey` = $identifier" ;
-			
-			//echo $q;
-			echo $general->returnYesNoDBQuery($q);
-			//use returnYesNoDBQuery for this query
 			
 		}else{
 			
