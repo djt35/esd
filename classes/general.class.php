@@ -36,9 +36,9 @@ class general {
 		foreach ($data as $key=>$value){
 
 			$sanitisedValue = trim($value);
-			$sanitisedValue = stripslashes($sanitisedValue);
-			$sanitisedValue = htmlspecialchars($sanitisedValue);
-
+			//$sanitisedValue = addslashes($sanitisedValue);
+			//$sanitisedValue = htmlspecialchars($sanitisedValue);
+			//consider htmlentitydecode here, this converts back so &amp to &, special chars & to &amp 
 			$dataSanitised[$key] = $sanitisedValue;
 
 		}

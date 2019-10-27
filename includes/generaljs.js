@@ -342,7 +342,7 @@ function pushDataFromFormAJAX (form, table, identifierKey, identifier, updateTyp
 	
 	
 	return $.ajax({
-	        url: siteRoot + "scripts/masterAjaxDatabaseUpdateScript.php",
+	        url: siteRoot + "scripts/masterClassInteractor.php",
 	        type: "get",
 	        data: data
 	

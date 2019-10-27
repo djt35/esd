@@ -45,6 +45,14 @@ Class DataBaseMysql {
 			return $result;
 			
 	}
+
+	public function prepare($q){
+			
+		$result = $this->conn->prepare($q) or die("Error SQL prepare->". mysql_error());;
+		//var_dump($stmt);
+		return $result;
+		
+	}
 	
 	public function RunQueryDebug($query_tag){
 		$result = $this->conn->query($query_tag) or die("Error SQL query-> $query_tag  ". mysql_error());

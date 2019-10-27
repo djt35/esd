@@ -8,9 +8,10 @@
 			$formv1 = new formGenerator;
 			$general = new general;
 			$video = new video;
-			$tagCategories = new tagCategories;
+            $tagCategories = new tagCategories;
+            $esdLesion = new esdLesion;
 		
-		
+		error_reporting(E_ALL);
 		
 		foreach ($_GET as $k=>$v){
 		
@@ -87,51 +88,45 @@
 			        <p>
 		
 					    
-						<?php 
-						
-						include($root . "/scripts/FormFunctionsESD.php");
+                        <?php 
+                        /*
+                        try{
+                            $db = new pdo('mysql:host=127.0.0.1;port=3309;dbname=esdv1;charset=utf8','root','nevira1pine',array(
+                                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                            ));
+                            var_dump($db);
+                            echo "Connected successfully";
 
-						$iterationForm = 1;
-						$sectionTitle = array();
-						//$sectionTitle[0] = "";
-						$sectionTitle[1] = "Patient Details";
-						$sectionTitle[2] = "Pre-ESD";
-						$sectionTitle[3] = "Procedural technical details";
-						$sectionTitle[4] = "Lesion details";
-						$sectionTitle[5] = "Adverse Events";
-						$sectionTitle[6] = "Histology";
-						$sectionTitle[7] = "Surgical data";
-						$sectionTitle[8] = "First Surveillance";
-						$sectionTitle[9] = "Second Surveillance";
-						$sectionTitle[9] = "Most Recent Surveillance";
-					
-					
-						echo '<form id="esdLesion">';
-					for($x = 1; $x <= 9; $x++) {
-						
-						if ($x == 3 || $x == 5 || $x == 7 || $x == 9){
+                            // prepare sql and bind parameters
+                            $stmt = $db->prepare("INSERT INTO `esdLesion` (`AGE`, `Ethnicity`)
+                            VALUES (:AGE, :Ethnicity)");
 
-							echo "</div>";
+                            $stmt->bindParam(':AGE', $AGE);
+                            $stmt->bindParam(':Ethnicity', $Ethnicity);
+                            
 
-						}
-						
-						echo "<div class='row'>";
-						echo "<div class='col-5'>";
-						echo "<fieldset class=\"".$sectionTitle[$x]."\"><h3 style='text-align:left;'>".$sectionTitle[$x]."</h3>";
-						echo "<table class=\"comorbidity\">";
-						include($root . "/scripts/iterateFormESD.php");
-						echo "</table><br/></fieldset><br>";
-						echo "</div>";
-						echo "<div class='col-1'>";
-						echo "</div>";
-						if ($x == 2 || $x == 4 || $x === 6 || $x === 8){
+                            // insert a row
+                            $AGE = "25";
+                            $Ethnicity = "Chinese";
+                            $stmt->execute();
+                            echo 'Insert id ' . $db->lastInsertId();
 
-							echo "</div>";
+                        }catch(PDOException $pe){
+                                echo $pe->getMessage();
+                            }  */ 
 
-						}
-						
-						$iterationForm++;
-					} 
+                        $esdLesion->Load_from_key(1);
+                        echo $esdLesion->getIndicationforESD();
+                        $esdLesion->setIndicationforESD('3');
+                        echo $esdLesion->getIndicationforESD();
+                        //echo $esdLesion->Save_Active_Row();
+                        //echo $esdLesion->prepareStatement();
+                        echo $esdLesion->numberOfRows();
+                        echo "<br><br>";
+                        //echo $esdLesion->prepareStatementPDOUpdate();
+                    
+                            //echo $esdLesion->Delete_row_from_key(2);
+
 						
 		
 ?>
@@ -307,7 +302,7 @@
 		
 					esdLesionObject.done(function (data){
 		
-						console.log(data);
+						//console.log(data);
 		
 						if (data){
 		
