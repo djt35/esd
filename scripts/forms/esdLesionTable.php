@@ -9,6 +9,7 @@
 		$general = new general;
 		$video = new video;
 		$tagCategories = new tagCategories;
+		$esdLesion = new esdLesion;
 		
 		
 		
@@ -21,9 +22,9 @@
 		</head>
 		
 		<?php
-		include($root . "/scripts/logobar.php");
+		//include($root . "/scripts/logobar.php");
 		
-		include($root . "/includes/naviCreator.php");
+		include($root . "/includes/naviERCP.php");
 		?>
 		
 		
@@ -32,11 +33,11 @@
 				
 		    <div id='content' class='content'>
 			    
-		        <div class='responsiveContainer white'>
+		        <div class='responsiveContainer'>
 			        
 			        <div class='row'>
 		                <div class='col-9'>
-		                    <h2 style="text-align:left;">List of esdLesion</h2>
+		                    <h2 style="text-align:left;">List of Upper GI ESD Lesions</h2>
 		                </div>
 		
 		                <div id="messageBox" class='col-3 yellow-light narrow center'>
@@ -47,8 +48,10 @@
 			        <div class='row'>
 		                <div class='col-1'></div>
 		
-		                <div class='col-10 narrow' style='overflow-x: scroll;'>
-		                    <p><?php $general->makeTable("SELECT _k_lesion from esdLesion"); ?></p>
+						<div class='col-10 narrow' style='overflow-x: scroll;'>
+							<p style='text-align:left;'><?php echo "There are ".$esdLesion->numberOfRows()." lesions";?> </p>
+							<br>
+		                    <p><?php $general->makeTable("SELECT `_k_lesion` AS `Lesion ID`, `Dateofprocedure` AS `Date of Procedure` from `esdLesion` ORDER BY `Dateofprocedure` DESC"); ?></p>
 		                </div>
 		
 		                <div class='col-1'></div>

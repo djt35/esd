@@ -64,7 +64,7 @@ $host = substr($_SERVER['HTTP_HOST'], 0, 5);
 		</head>
 		
 		<?php
-		include($root . "/scripts/logobar.php");
+		//include($root . "/scripts/logobar.php");
 		
 		include($root . "/includes/naviERCP.php");
 		?>
@@ -75,7 +75,7 @@ $host = substr($_SERVER['HTTP_HOST'], 0, 5);
 		
 		    <div id='content' class='content'>
 		
-		        <div class='responsiveContainer white'>
+		        <div class='responsiveContainer'>
 		
 			        <div class='row'>
 				        		                <div class='col-9'>

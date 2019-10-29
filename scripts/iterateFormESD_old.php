@@ -29,7 +29,7 @@
             if ($result){
             while($row = mysqli_fetch_array($result)) {
                 if (($row["Type"])==1){
-                    generateSelect (($row["Text"]), ($row["Name"]) , ($row["Value1"]), ($row["Value2"]), $_POST[($row["Name"])], ($row["Message_t"]), $valuesObject); 
+                    generateSelect (($row["Text"]), ($row["Name"]) , ($row["Value1"]), ($row["Value2"]), $_POST[($row["Name"])], ($row["Message_t"])); 
                     
                 } 
                 elseif (($row["Type"])==2){

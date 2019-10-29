@@ -32,23 +32,25 @@ echo '<div class="navbar">';
   
   echo '<a href="' . $roothttp . 'index.php">Home</a>';
   
-  echo '<a href="' . $roothttp . 'scripts/forms/creatormenu.php">ERCP Menu</a>';
+ // echo '<a href="' . $roothttp . 'scripts/forms/creatormenu.php">ERCP Menu</a>';
   
-  echo '<div class="dropdown topnav"><button class="dropbtn">Patient&#9660;</button>
+  echo '<div class="dropdown topnav"><button class="dropbtn">ERCP&#9660;</button>
 			  			<div class="dropdown-content">
 			  				
-			  				<a href="' . $roothttp . 'scripts/forms/ERCPpatientForm.php">New patient</a><hr>
-			  				<a href="' . $roothttp . '/scripts/forms/ERCPpatientTable.php">Edit patients</a>
+			  				<a href="' . $roothttp . 'scripts/forms/ERCPpatientForm.php">New patient</a>
+							  <a href="' . $roothttp . 'scripts/forms/ERCPpatientTable.php">Edit patients</a><hr>
+							  <a href="' . $roothttp . 'scripts/forms/ERCPprocedureForm.php">New procedure</a>
+			  				<a href="' . $roothttp . 'scripts/forms/ERCPprocedureTable.php">Edit procedures</a>
 			  				
 			  				
 			  			</div>
 			  		</div>';
 			  		
-	echo '<div class="dropdown topnav"><button class="dropbtn">Procedure&#9660;</button>
+	echo '<div class="dropdown topnav"><button class="dropbtn">Upper GI ESD&#9660;</button>
 			  			<div class="dropdown-content">
 			  				
-			  				<a href="' . $roothttp . 'scripts/forms/ERCPprocedureForm.php">New ERCP procedure</a><hr>
-			  				<a href="' . $roothttp . '/scripts/forms/ERCPprocedureTable.php">Edit procedures</a>
+			  				<a href="' . $roothttp . 'scripts/forms/esdLesionForm.php">New ESD lesion</a><hr>
+			  				<a href="' . $roothttp . 'scripts/forms/esdLesionTable.php">Edit ESD lesions</a>
 			  				
 			  				
 			  			</div>

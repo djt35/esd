@@ -1,11 +1,5 @@
 <?php 
        
-       
-		
-		
-			
-		
-       
         function generateSelect($stext, $sname, $svalue1, $svalue2, $post, $message) {
 	        
 	        $host = substr($_SERVER['HTTP_HOST'], 0, 5);

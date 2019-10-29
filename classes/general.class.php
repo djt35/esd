@@ -1922,7 +1922,61 @@ INNER JOIN `imagesDraft` as c on b.`image_id` = c.`id` WHERE a.`approved` IS NUL
 		
 	}
 	
-	
+	/**
+	 * 
+	 * Generic values code
+	 * 
+	 */
+
+	public function writeSelect($svalue1, $svalue2, $tableNameValues){
+
+		$q = "SELECT `".$svalue1."`, `".$svalue2."` FROM `$tableNameValues` WHERE `".$svalue1."` IS NOT NULL AND `".$svalue2."` <> ''";
+		//echo $q;
+		$result = $this->connection->RunQuery($q);
+		//print_r($result);
+
+		$returnString = "";
+
+		if ($result){
+			while($row = $result->fetch_array(MYSQLI_ASSOC)){
+
+				$returnString .= "<option value=".$row[$svalue1];
+				
+					if (($row[$svalue1])==$post) {
+						$returnString .= " selected = 'selected'";
+					}
+					$returnString .= ">".$row[$svalue1]." ".$row[$svalue2]."</option>"; 
+			
+			}
+		}
+
+		return $returnString;
+
+	 }	
+
+	 public function formIterator ($iterationForm, $tableNameSheet){
+
+		$q = "SELECT `Name`, `Type`, `textType`, `Value1`, `Value2`, `Text`, `Message_t` FROM `$tableNameSheet` WHERE position=".$iterationForm." AND Type IS NOT NULL ORDER BY `Order` ASC";
+		//echo $q;
+		$result = $this->connection->RunQuery($q);
+		//print_r($result);
+
+		
+		$returnArray = array();
+
+		if ($result){
+			while ($row = $result->fetch_array(MYSQLI_ASSOC)){
+
+				$returnArray[] = $row;
+
+			}
+			return $returnArray;
+		}
+
+		
+
+
+	 }
 
 }
 

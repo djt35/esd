@@ -9,6 +9,7 @@
 			$general = new general;
 			$video = new video;
 			$tagCategories = new tagCategories;
+			
 		
 		
 		
@@ -89,7 +90,11 @@
 					    
 						<?php 
 						
-						include($root . "/scripts/FormFunctionsESD.php");
+						$tableNameValues = "valuesESD";
+						$tableNameSheet = "pageLayoutESD";
+
+
+						include($root . "/scripts/FormFunctionsGeneric.php");
 
 						$iterationForm = 1;
 						$sectionTitle = array();
@@ -119,7 +124,7 @@
 						echo "<div class='col-5'>";
 						echo "<fieldset class=\"".$sectionTitle[$x]."\"><h3 style='text-align:left;'>".$sectionTitle[$x]."</h3>";
 						echo "<table class=\"comorbidity\">";
-						include($root . "/scripts/iterateFormESD.php");
+						include($root . "/scripts/iterateFormGeneric.php");
 						echo "</table><br/></fieldset><br>";
 						echo "</div>";
 						echo "<div class='col-1'>";
