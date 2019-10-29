@@ -1,5 +1,4 @@
 <?php 
-session_start();
 
 /* 
 
@@ -16,6 +15,8 @@ session_start();
 // Errors are emailed here:
 $contact_email = 'djtate@gmail.com'; 
 
+// is the site active or not
+
 $active = 1;
 
 if ($active == 0){
@@ -23,6 +24,7 @@ if ($active == 0){
 	echo 'Site closed for maintenance, please check back later';
 	exit();	
 }
+
 
 
 // Determine whether we're working on a local server
@@ -50,7 +52,7 @@ if ($local) {
 		
 			require($_SERVER['DOCUMENT_ROOT'].'/dashboard/esd/classes/'.$class.'.class.php');
 		 	
-	}
+		}
 	
 	
 	spl_autoload_register ('class_loader');
@@ -72,9 +74,6 @@ if ($local) {
 	spl_autoload_register ('class_loader');
     
 }
-
-define('redirect_location', BASE_URL . '/index.php');
-//echo redirect_location;
     
 /* 
  *  Most important setting!
@@ -91,7 +90,7 @@ $debug = TRUE;
  *  before this next conditional.
  */
 
-$debug = FALSE;
+//$debug = TRUE;
 
 // Assume debugging is off. 
 if (!isset($debug)) {
@@ -101,7 +100,6 @@ if (!isset($debug)) {
 # ***** SETTINGS ***** #
 # ******************** #
 
-error_reporting(0);
 
 # **************************** #
 # ***** ERROR MANAGEMENT ***** #
@@ -137,9 +135,9 @@ function my_error_handler($e_number, $e_message, $e_file, $e_line, $e_vars) {
 } // End of my_error_handler() definition.
 
 // Use my error handler:
-//set_error_handler('my_error_handler');
+set_error_handler('my_error_handler');
 
 # ***** ERROR MANAGEMENT ***** #
 # **************************** #
 
-error_reporting(1);
+error_reporting(E_ALL);

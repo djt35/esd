@@ -2,8 +2,11 @@
 		
 		<?php
 		
-			require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
-		
+		require ('../../includes/config.inc.php');		
+			
+		require (BASE_URI.'/scripts/headerCreator.php');
+	
+		//error_reporting(E_ALL);
 		
 		$formv1 = new formGenerator;
 		$general = new general;

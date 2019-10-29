@@ -2,8 +2,16 @@
 		
 		
 			<?php
+
+			$openaccess = 0;
+			$requiredUserLevel = 2;
+			
+			require ('../../includes/config.inc.php');		
+			
+			require (BASE_URI.'/scripts/headerCreator.php');
 		
-			require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
+			error_reporting(1);
+			//require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
 		
 			$formv1 = new formGenerator;
 			$general = new general;
@@ -48,7 +56,7 @@
 		<?php
 		//include($root . "/scripts/logobar.php");
 		
-		include($root . "/includes/naviERCP.php");
+		include(BASE_URI . "/includes/naviERCP.php");
 		?>
 		
 		<body>
@@ -94,7 +102,7 @@
 						$tableNameSheet = "pageLayoutESD";
 
 
-						include($root . "/scripts/FormFunctionsGeneric.php");
+						include(BASE_URI . "/scripts/FormFunctionsGeneric.php");
 
 						$iterationForm = 1;
 						$sectionTitle = array();
@@ -124,7 +132,7 @@
 						echo "<div class='col-5'>";
 						echo "<fieldset class=\"".$sectionTitle[$x]."\"><h3 style='text-align:left;'>".$sectionTitle[$x]."</h3>";
 						echo "<table class=\"comorbidity\">";
-						include($root . "/scripts/iterateFormGeneric.php");
+						include(BASE_URI . "/scripts/iterateFormGeneric.php");
 						echo "</table><br/></fieldset><br>";
 						echo "</div>";
 						echo "<div class='col-1'>";
@@ -155,7 +163,21 @@
 			</form>
 			
 		<script>
-			var siteRoot = "http://localhost:90/dashboard/esd/";
+
+switch (document.location.hostname) {
+        case 'www.endoscopy.wiki':
+
+            var rootFolder = 'http://www.endoscopy.wiki/esd';
+            break;
+        case 'localhost':
+            var rootFolder = 'http://localhost:90/dashboard/esd/';
+            break;
+        default: // set whatever you want
+    }
+
+    var siteRoot = rootFolder;
+
+			//var siteRoot = "http://localhost:90/dashboard/esd/";
 		
 			 esdLesionPassed = $("#id").text();
 		
@@ -189,7 +211,7 @@
 		
 				selectorObject.done(function (data){
 		
-					//console.log(data);
+					console.log(data);
 		
 					var formData = $.parseJSON(data);
 		
@@ -432,7 +454,7 @@
 		<?php
 		
 		    // Include the footer file to complete the template:
-		    include($root ."/includes/footer.html");
+		    include(BASE_URI ."/includes/footer.html");
 		
 		
 		
