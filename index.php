@@ -3,7 +3,7 @@
 		
 		<?php
 			
-		require ('config.inc.php');
+		require ('includes/config.inc.php');
 		
 		require (BASE_URI . '/scripts/headerIndex.php');
 		

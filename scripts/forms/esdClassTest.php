@@ -12,7 +12,7 @@
             $esdLesion = new esdLesion;
             $valuesObject = new valuesESD;
 		
-		error_reporting(E_ALL);
+		
 		
 		foreach ($_GET as $k=>$v){
 		
@@ -146,7 +146,22 @@
 			</form>
 			
 		<script>
-			var siteRoot = "http://localhost:90/dashboard/esd/";
+			switch (true) {
+				case winLocation('endoscopy.wiki'):
+
+					var rootFolder = 'https://www.endoscopy.wiki/esd';
+					break;
+				case winLocation('localhost'):
+					var rootFolder = 'http://localhost:90/dashboard/esd/';
+					break;
+				default: // set whatever you want
+					var rootFolder = 'https://www.endoscopy.wiki/esd';
+					break;
+			}
+
+
+
+    var siteRoot = rootFolder;
 		
 			 esdLesionPassed = $("#id").text();
 		

@@ -1,6 +1,6 @@
 <?php
 	
-error_reporting(1);
+(1);
 
 require(BASE_URI . '/includes/login_functions.php');
 

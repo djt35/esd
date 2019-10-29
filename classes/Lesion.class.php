@@ -9,7 +9,7 @@
  *
  */
 
-error_reporting(1);
+(1);
 
 require_once 'DataBaseMysql.class.php';
 

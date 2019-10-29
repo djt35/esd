@@ -25,7 +25,7 @@
 
 	
 			<?php    
-			// error_reporting(0);
+			// (0);
 				//define ('MYSQL', '../mysqli_connect_learning.php');
 				//require (DB);
 			

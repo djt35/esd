@@ -59,7 +59,7 @@ if ($local) {
 } else {
 
     define('BASE_URI', $_SERVER['DOCUMENT_ROOT'].'/esd');
-    define('BASE_URL', 'http://www.endoscopy.wiki/esd');
+    define('BASE_URL', 'https://www.endoscopy.wiki/esd');
     define('DB', '../../mysqli_connect_esd.php');
     
     function class_loader($class) {
@@ -72,6 +72,9 @@ if ($local) {
 	spl_autoload_register ('class_loader');
     
 }
+
+$root = BASE_URI . '/';
+$roothttp = BASE_URL . '/';
 
 define('redirect_location', BASE_URL . '/index.php');
 //echo redirect_location;
@@ -101,7 +104,7 @@ if (!isset($debug)) {
 # ***** SETTINGS ***** #
 # ******************** #
 
-error_reporting(0);
+(0);
 
 # **************************** #
 # ***** ERROR MANAGEMENT ***** #
@@ -142,4 +145,4 @@ function my_error_handler($e_number, $e_message, $e_file, $e_line, $e_vars) {
 # ***** ERROR MANAGEMENT ***** #
 # **************************** #
 
-error_reporting(1);
+error_reporting(0);

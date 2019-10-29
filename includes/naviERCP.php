@@ -98,7 +98,7 @@ echo '
 
 
 
- error_reporting(0); 
+ (0); 
 /* 
 echo '
 <div class="dropdown">

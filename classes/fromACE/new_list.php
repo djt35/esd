@@ -53,7 +53,7 @@ form {
 
 <div id='content'>
 <?php
-error_reporting(-1);
+;
 
 $lesion = new Lesion;
 $lesion->Lesion();

@@ -10,7 +10,7 @@
 			
 			require (BASE_URI.'/scripts/headerCreator.php');
 		
-			error_reporting(1);
+			//(1);
 			//require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
 		
 			$formv1 = new formGenerator;
@@ -164,20 +164,24 @@
 			
 		<script>
 
-switch (document.location.hostname) {
-        case 'www.endoscopy.wiki':
 
-            var rootFolder = 'http://www.endoscopy.wiki/esd';
-            break;
-        case 'localhost':
-            var rootFolder = 'http://localhost:90/dashboard/esd/';
-            break;
-        default: // set whatever you want
-    }
+
+			switch (true) {
+				case winLocation('endoscopy.wiki'):
+
+					var rootFolder = 'https://www.endoscopy.wiki/esd';
+					break;
+				case winLocation('localhost'):
+					var rootFolder = 'http://localhost:90/dashboard/esd/';
+					break;
+				default: // set whatever you want
+					var rootFolder = 'https://www.endoscopy.wiki/esd';
+					break;
+			}
+
+
 
     var siteRoot = rootFolder;
-
-			//var siteRoot = "http://localhost:90/dashboard/esd/";
 		
 			 esdLesionPassed = $("#id").text();
 		

@@ -469,7 +469,7 @@
 	
 	
 	
-	error_reporting(-1);
+	;
 	
 	//load the classes that provide the data
 	

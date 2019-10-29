@@ -2,23 +2,12 @@
 
 	
 
-$host = substr($_SERVER['HTTP_HOST'], 0, 5);
-		if (in_array($host, array('local', '127.0', '192.1'))) {
-		    $local = TRUE;
-		} else {
-		    $local = FALSE;
-		}
-		
-		if ($local){
+			$openaccess = 0;
+			$requiredUserLevel = 1;
 			
-			require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
+			require ('../../includes/config.inc.php');		
 			
-			
-		}else{
-			
-			require ($_SERVER['DOCUMENT_ROOT'].'/esd/scripts/headerCreator.php');;
-		}
-			
+			require (BASE_URI.'/scripts/headerCreator.php');
 		
 		
 		

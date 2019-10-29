@@ -13,7 +13,7 @@
 <div class="content">
 	
 			<?php    
-			error_reporting(E_ALL);
+			;
 
 			/*config variables */
 			

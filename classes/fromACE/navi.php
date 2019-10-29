@@ -1,6 +1,6 @@
 <?php
 	
-error_reporting(0);
+(0);
 $centre = $_SESSION['centre'];
 $folder = 'https://' . $_SERVER['HTTP_HOST'] . '/studyserver/PROSPER/';
 
@@ -163,7 +163,7 @@ echo '<div class="navbar">
       
     echo '</div>
   </div>';
- error_reporting(0); 
+ 
 if ($user->getaccess_level() == 1){
    echo '<div class="dropdown">
     <button class="dropbtn">&#9660;&nbsp;Outputs 

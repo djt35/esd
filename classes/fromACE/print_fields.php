@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(1);
+(1);
 
 $folder = 'https://' . $_SERVER['HTTP_HOST'] . '/studyserver/PROSPER/';
 

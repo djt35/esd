@@ -6,6 +6,10 @@
 <div class="content">
 
    <?php // Unset all of the session variables.
+   $openaccess = 1;
+   
+   require ('../../includes/config.inc.php');		
+   require (BASE_URI.'/scripts/headerScript.php');
 $_SESSION = array();
 
 // If it's desired to kill the session, also delete the session cookie.
@@ -21,8 +25,8 @@ if (ini_get("session.use_cookies")) {
 // Finally, destroy the session.
 session_destroy();
  
-	header ("Location: elearn.php");
-        exit ();
+	//header ("Location: ". BASE_URI ."elearn.php");
+      //  exit ();
 	
     ?>
     

@@ -124,7 +124,7 @@
 	
 <?php	
 	
-	error_reporting(0);
+	(0);
 	
 	//load the classes that provide the data
 	

@@ -10,7 +10,7 @@
  * License: LGPL 
  * 
  */
-error_reporting(E_ALL);
+//;
 		
 Class DataBaseMysqlPDO {
 

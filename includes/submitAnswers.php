@@ -12,7 +12,7 @@ session_start( );
 
   }
 
-//error_reporting(-1);
+//;
 
 $myinputs = filter_input_array(INPUT_POST, FILTER_SANITIZE_ENCODED);
 //var_dump($myinputs);

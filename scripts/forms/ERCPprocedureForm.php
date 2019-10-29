@@ -22,7 +22,7 @@ $host = substr($_SERVER['HTTP_HOST'], 0, 5);
 			require ($_SERVER['DOCUMENT_ROOT'].'/esd/scripts/headerCreator.php');
 		}
 			
-			error_reporting(-1);
+			;
 		
 			$formv1 = new formGenerator;
 			$general = new general;

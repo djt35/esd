@@ -1,25 +1,10 @@
 
  <?php
-error_reporting(-1);	 
-
-session_start();
-
-$host = substr($_SERVER['HTTP_HOST'], 0, 5);
-if (in_array($host, array('local', '127.0', '192.1'))) {
-    $local = TRUE;
-} else {
-    $local = FALSE;
-}
 	 
-if ($local){
-
-	require ($_SERVER['DOCUMENT_ROOT'].'/dashboard/esd/includes/config.inc.php');
-
-}else{
-
-	require ($_SERVER['DOCUMENT_ROOT'].'/esd/includes/config.inc.php');
-
-}
+	 $openaccess = 1;
+	 
+	 require ('../../includes/config.inc.php');		
+	 require (BASE_URI.'/scripts/headerScript.php');
 
 
 

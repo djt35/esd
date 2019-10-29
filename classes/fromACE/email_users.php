@@ -2,7 +2,7 @@
 
 session_start( );
 
-error_reporting(-1);
+;
 
 $folder = 'https://' . $_SERVER['HTTP_HOST'] . '/studyserver/PROSPER/';
 

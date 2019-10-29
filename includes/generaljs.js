@@ -642,7 +642,7 @@ function logout(){
 	request.done(function(data){
 			   var siteRootesd = siteRoot.replace('/learning/','');
 
-			   window.location.href = siteRoot + "/esd/index.php";
+			   window.location.href = siteRoot + "index.php";
 
 		   });
 	
@@ -725,7 +725,20 @@ function showLoginModal(){
 	
 	
 }
+function winLocation(term){
 
+	var contains = window.location.href.indexOf(term);
+
+	if (contains > 0){
+		return true;
+	}else{
+
+		return false;
+	}
+
+	
+
+}
 
 function login(){
 	
@@ -890,6 +903,8 @@ $('.tooltip').on('click', function() {
 		
 	});
 });
+
+
 
 
 

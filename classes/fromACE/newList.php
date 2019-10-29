@@ -53,7 +53,7 @@ label.error { float: none; color: red; padding-left: .5em; vertical-align: top; 
 
 <div id='content'>
 <?php
-error_reporting(-1);
+;
 
 //$sql = new DataBaseMysql;
 //echo $sql->DataBaseMysql();

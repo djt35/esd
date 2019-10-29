@@ -1,12 +1,14 @@
 
 		
 		<?php
+		$openaccess = 0;
+		$requiredUserLevel = 2;
 		
 		require ('../../includes/config.inc.php');		
-			
+		
 		require (BASE_URI.'/scripts/headerCreator.php');
 	
-		//error_reporting(E_ALL);
+		//;
 		
 		$formv1 = new formGenerator;
 		$general = new general;
@@ -65,7 +67,22 @@
 		        
 		    </div>
 		<script>
-			var siteRoot = "http://localhost:90/dashboard/esd/";
+			switch (true) {
+				case winLocation('endoscopy.wiki'):
+
+					var rootFolder = 'https://www.endoscopy.wiki/esd';
+					break;
+				case winLocation('localhost'):
+					var rootFolder = 'http://localhost:90/dashboard/esd/';
+					break;
+				default: // set whatever you want
+					var rootFolder = 'https://www.endoscopy.wiki/esd';
+					break;
+			}
+
+
+
+    var siteRoot = rootFolder;
 		
 				
 			$(document).ready(function() {

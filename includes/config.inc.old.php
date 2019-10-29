@@ -140,4 +140,4 @@ set_error_handler('my_error_handler');
 # ***** ERROR MANAGEMENT ***** #
 # **************************** #
 
-error_reporting(E_ALL);
+;

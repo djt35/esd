@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
 	redirect_login($location);
 }
 
-error_reporting(1);
+(1);
 
 ?>
 

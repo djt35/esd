@@ -77,7 +77,7 @@ tr:nth-child(2n){background-color: #f2f2f2}
 	
 </style>
 <?php
-error_reporting(0);
+(0);
 		
 
 	
@@ -519,7 +519,7 @@ if ((!(isset($lesionID))) && (!(isset($procedureID)))){
 
 ?>   
 <?php 
-    error_reporting(0);
+    (0);
 
     //define the database we are using, here PROSPER.
     
