@@ -10,7 +10,7 @@ $general = new general;
 
 //modify database in use here
 
-$esdLesion = new PolypectomyAssessmentTool;
+$esdLesion = new esdLesion;
 
 
 
@@ -191,10 +191,6 @@ if (count($_GET) > 0){
 	}else if ($update == 1){
 		
 		//if this is an update check the id field exists
-
-		//$q = "SELECT `$identifierKey` FROM `$table` WHERE `$identifierKey` = $identifier";
-		
-		//echo $q;
         
         if ($esdLesion->matchRecord($identifier)){
 
@@ -296,5 +292,5 @@ if (count($_GET) > 0){
 }
 
 $general->endGeneral();
-$esdLesion->endPolypectomyAssessmentTool();
+$esdLesion->endesdLesion();
 

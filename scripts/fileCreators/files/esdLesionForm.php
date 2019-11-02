@@ -169,7 +169,9 @@ echo $formv1->generateText('Ultimateoutcome', 'Ultimateoutcome', '', 'tooltip he
 echo $formv1->generateText('FullThicknessPerf', 'FullThicknessPerf', '', 'tooltip here');
 echo $formv1->generateText('Historemarks2', 'Historemarks2', '', 'tooltip here');
 echo $formv1->generateText('HistologyCriteriaLGDNew', 'HistologyCriteriaLGDNew', '', 'tooltip here');
-echo $formv1->generateText('AdjiuvantTreatment', 'AdjiuvantTreatment', '', 'tooltip here');
+echo $formv1->generateText('AdjuvantTreatment', 'AdjuvantTreatment', '', 'tooltip here');
+echo $formv1->generateText('created', 'created', '', 'tooltip here');
+echo $formv1->generateText('updated', 'updated', '', 'tooltip here');
 ?>
 						    <button id="submitesdLesion">Submit</button>
 		
@@ -183,22 +185,7 @@ echo $formv1->generateText('AdjiuvantTreatment', 'AdjiuvantTreatment', '', 'tool
 		
 		    </div>
 		<script>
-			switch (true) {
-				case winLocation('endoscopy.wiki'):
-
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-				case winLocation('localhost'):
-					var rootFolder = 'http://localhost:90/dashboard/esd/';
-					break;
-				default: // set whatever you want
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-			}
-
-
-
-    var siteRoot = rootFolder;
+			var siteRoot = "http://localhost:90/dashboard/esd/";
 		
 			 esdLesionPassed = $("#id").text();
 		

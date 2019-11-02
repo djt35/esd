@@ -113,22 +113,7 @@ echo $formv1->generateText('Required4weeks', 'Required4weeks', '', 'tooltip here
 		
 		    </div>
 		<script>
-			switch (true) {
-				case winLocation('endoscopy.wiki'):
-
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-				case winLocation('localhost'):
-					var rootFolder = 'http://localhost:90/dashboard/esd/';
-					break;
-				default: // set whatever you want
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-			}
-
-
-
-    var siteRoot = rootFolder;
+			var siteRoot = "http://localhost:90/dashboard/esd/";
 		
 			 pageLayoutESDPassed = $("#id").text();
 		

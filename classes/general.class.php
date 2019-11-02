@@ -1954,9 +1954,73 @@ INNER JOIN `imagesDraft` as c on b.`image_id` = c.`id` WHERE a.`approved` IS NUL
 
 	 }	
 
+	 public function writeSelectWeight($svalue1, $svalue2, $tableNameValues, $weight){
+
+		if ($weight == '1'){
+			$q = "SELECT `".$svalue1."`, `".$svalue2."`, `".$svalue1."_weight`, `".$svalue1."_denominator` FROM `$tableNameValues` WHERE `".$svalue1."` IS NOT NULL AND `".$svalue2."` <> ''";
+			//echo $q;
+			$result = $this->connection->RunQuery($q);
+			//print_r($result);
+
+		}else{
+
+			$q = "SELECT `".$svalue1."`, `".$svalue2."` FROM `$tableNameValues` WHERE `".$svalue1."` IS NOT NULL AND `".$svalue2."` <> ''";
+			//echo $q;
+			$result = $this->connection->RunQuery($q);
+			//print_r($result);
+		}
+
+		$returnString = "";
+
+		if ($result){
+			while($row = $result->fetch_array(MYSQLI_ASSOC)){
+
+				$returnString .= "<option value=".$row[$svalue1];
+
+					//echo $weight;
+					if ($weight) {
+
+						$dataWeight = $row[$svalue1.'_weight'];
+						$dataDenominator = $row[$svalue1.'_denominator'];
+
+						$returnString .= " data-weight = '{\"weight\":\"$dataWeight\", \"denominator\":\"$dataDenominator\"}'";
+					}
+					$returnString .= ">".$row[$svalue1]." ".$row[$svalue2]."</option>"; 
+			
+			}
+		}
+
+		return $returnString;
+
+	 }	
+
 	 public function formIterator ($iterationForm, $tableNameSheet){
 
 		$q = "SELECT `Name`, `Type`, `textType`, `Value1`, `Value2`, `Text`, `Message_t` FROM `$tableNameSheet` WHERE position=".$iterationForm." AND Type IS NOT NULL ORDER BY `Order` ASC";
+		//echo $q;
+		$result = $this->connection->RunQuery($q);
+		//print_r($result);
+
+		
+		$returnArray = array();
+
+		if ($result){
+			while ($row = $result->fetch_array(MYSQLI_ASSOC)){
+
+				$returnArray[] = $row;
+
+			}
+			return $returnArray;
+		}
+
+		
+
+
+	 }
+
+	 public function formIteratorWeight ($iterationForm, $tableNameSheet){
+
+		$q = "SELECT `Name`, `Type`, `textType`, `Value1`, `Value2`, `Text`, `Message_t`, `Weight`, `ForVideo`, `AlwaysRequired`, `RequiredIfCondition`, `Condition` FROM `$tableNameSheet` WHERE position=".$iterationForm." AND Type IS NOT NULL ORDER BY `Order` ASC";
 		//echo $q;
 		$result = $this->connection->RunQuery($q);
 		//print_r($result);

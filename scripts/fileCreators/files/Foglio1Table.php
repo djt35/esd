@@ -17,7 +17,7 @@
 		
 		<html>
 		<head>
-		    <title>pagelayoutercppatient Table</title>
+		    <title>Foglio1 Table</title>
 		</head>
 		
 		<?php
@@ -36,11 +36,11 @@
 			        
 			        <div class='row'>
 		                <div class='col-9'>
-		                    <h2 style="text-align:left;">List of pagelayoutercppatient</h2>
+		                    <h2 style="text-align:left;">List of Foglio1</h2>
 		                </div>
 		
 		                <div id="messageBox" class='col-3 yellow-light narrow center'>
-		                    <p><button id="newpagelayoutercppatient" onclick="window.location.href = '<?php echo $roothttp;?>/scripts/forms/pagelayoutercppatientForm.php';">New pagelayoutercppatient</button></p>
+		                    <p><button id="newFoglio1" onclick="window.location.href = '<?php echo $roothttp;?>/scripts/forms/Foglio1Form.php';">New Foglio1</button></p>
 		                </div>
 		            </div>
 			        
@@ -48,7 +48,7 @@
 		                <div class='col-1'></div>
 		
 		                <div class='col-10 narrow' style='overflow-x: scroll;'>
-		                    <p><?php $general->makeTable("SELECT id from pagelayoutercppatient"); ?></p>
+		                    <p><?php $general->makeTable("SELECT Position from Foglio1"); ?></p>
 		                </div>
 		
 		                <div class='col-1'></div>
@@ -72,7 +72,7 @@
 					
 					//console.log(id);
 					
-					window.location.href = siteRoot + 'scripts/forms/pagelayoutercppatientForm.php?id=' + id;
+					window.location.href = siteRoot + 'scripts/forms/Foglio1Form.php?id=' + id;
 		
 					
 				})

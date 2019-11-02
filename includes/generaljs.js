@@ -904,6 +904,18 @@ $('.tooltip').on('click', function() {
 	});
 });
 
+$('.reset').click(function(){
+      
+	//console.log('clicked');
+	
+	var desired = $(this).prev();
+	 
+	 $(desired).val('');
+	 
+	 //console.log(desired);
+	 
+ });
+
 
 
 

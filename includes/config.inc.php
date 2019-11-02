@@ -8,6 +8,7 @@ session_start();
  *  - Has site settings in one location.
  *  - Stores URLs and URIs as constants.
  *  - Sets how errors will be handled.
+ * 
  */
 
 # ******************** #

@@ -41,7 +41,7 @@
 		
 		<html>
 		<head>
-		    <title> Form</title>
+		    <title>Foglio1 Form</title>
 		</head>
 		
 		<?php
@@ -60,7 +60,7 @@
 		
 			        <div class='row'>
 		                <div class='col-9'>
-		                    <h2 style="text-align:left;"> Form</h2>
+		                    <h2 style="text-align:left;">Foglio1 Form</h2>
 		                </div>
 		
 		                <div id="messageBox" class='col-3 yellow-light narrow center'>
@@ -73,7 +73,7 @@
 		
 				        if ($id){
 		
-							$q = "SELECT    FROM    WHERE    = $id";
+							$q = "SELECT  Position  FROM  Foglio1  WHERE  Position  = $id";
 							if ($general->returnYesNoDBQuery($q) != 1){
 								echo "Passed id does not exist in the database";
 								exit();
@@ -86,9 +86,11 @@
 		
 			        <p>
 		
-					    <form id="">
-					    <?php ?>
-						    <button id="submit">Submit</button>
+					    <form id="Foglio1">
+					    <?php echo $formv1->generateText('Position', 'Position', '', 'tooltip here');
+echo $formv1->generateText('Text', 'Text', '', 'tooltip here');
+?>
+						    <button id="submitFoglio1">Submit</button>
 		
 					    </form>
 		
@@ -102,9 +104,9 @@
 		<script>
 			var siteRoot = "http://localhost:90/dashboard/esd/";
 		
-			 Passed = $("#id").text();
+			 Foglio1Passed = $("#id").text();
 		
-			if ( Passed == ""){
+			if ( Foglio1Passed == ""){
 		
 				var edit = 0;
 		
@@ -120,15 +122,15 @@
 		
 			function fillForm (idPassed){
 		
-				disableFormInputs("");
+				disableFormInputs("Foglio1");
 		
-				Required = new Object;
+				Foglio1Required = new Object;
 		
-				Required = getNamesFormElements("");
+				Foglio1Required = getNamesFormElements("Foglio1");
 		
-				String = '``=\''+idPassed+'\'';
+				Foglio1String = '`Position`=\''+idPassed+'\'';
 		
-				var selectorObject = getDataQuery ("", String, getNamesFormElements(""), 1);
+				var selectorObject = getDataQuery ("Foglio1", Foglio1String, getNamesFormElements("Foglio1"), 1);
 		
 				//console.log(selectorObject);
 		
@@ -147,19 +149,19 @@
 		
 				    });
 				    
-				    $("#messageBox").text("Editing  id "+idPassed);
+				    $("#messageBox").text("Editing Foglio1 id "+idPassed);
 		
-				    enableFormInputs("");
+				    enableFormInputs("Foglio1");
 		
 				});
 		
 				try {
 		
-					$("form#").find("button#delete").length();
+					$("form#Foglio1").find("button#deleteFoglio1").length();
 		
 				}catch(error){
 		
-					$("form#").find("button").after("<button id='delete'>Delete</button>");
+					$("form#Foglio1").find("button").after("<button id='deleteFoglio1'>Delete</button>");
 		
 				}
 		
@@ -168,24 +170,24 @@
 		
 			//delete behaviour
 		
-			function delete (){
+			function deleteFoglio1 (){
 		
-				//Passed is the current record, some security to check its also that in the id field
+				//Foglio1Passed is the current record, some security to check its also that in the id field
 		
-				if (Passed != $("#id").text()){
+				if (Foglio1Passed != $("#id").text()){
 		
 					return;
 		
 				}
 		
 		
-				if (confirm("Do you wish to delete this ?")) {
+				if (confirm("Do you wish to delete this Foglio1?")) {
 		
-					disableFormInputs("");
+					disableFormInputs("Foglio1");
 		
-					var Object = pushDataFromFormAJAX("", "", "", Passed, "2"); //delete 
+					var Foglio1Object = pushDataFromFormAJAX("Foglio1", "Foglio1", "Position", Foglio1Passed, "2"); //delete Foglio1
 		
-					Object.done(function (data){
+					Foglio1Object.done(function (data){
 		
 						//console.log(data);
 		
@@ -193,17 +195,17 @@
 		
 							if (data == 1){
 		
-								alert (" deleted");
+								alert ("Foglio1 deleted");
 								edit = 0;
-								Passed = null;
-								window.location.href = siteRoot + "scripts/forms/Table.php";
-								//go to  list
+								Foglio1Passed = null;
+								window.location.href = siteRoot + "scripts/forms/Foglio1Table.php";
+								//go to Foglio1 list
 		
 							}else {
 		
 							alert("Error, try again");
 		
-							enableFormInputs("");
+							enableFormInputs("Foglio1");
 		
 						    }
 		
@@ -219,24 +221,24 @@
 		
 			}
 		
-			function submitForm (){
+			function submitFoglio1Form (){
 		
 				//pushDataFromFormAJAX (form, table, identifierKey, identifier, updateType)
 		
 				if (edit == 0){
 		
-					var Object = pushDataFromFormAJAX("", "", "", null, "0"); //insert new object
+					var Foglio1Object = pushDataFromFormAJAX("Foglio1", "Foglio1", "Position", null, "0"); //insert new object
 		
-					Object.done(function (data){
+					Foglio1Object.done(function (data){
 		
 						//console.log(data);
 		
 						if (data){
 		
-							alert ("New  no "+data+" created");
+							alert ("New Foglio1 no "+data+" created");
 							edit = 1;
 							$("#id").text(data);
-							Passed = data;
+							Foglio1Passed = data;
 							fillForm(data);
 		
 		
@@ -253,9 +255,9 @@
 		
 				} else if (edit == 1){
 		
-					var Object = pushDataFromFormAJAX("", "", "", Passed, "1"); //insert new object
+					var Foglio1Object = pushDataFromFormAJAX("Foglio1", "Foglio1", "Position", Foglio1Passed, "1"); //insert new object
 		
-					Object.done(function (data){
+					Foglio1Object.done(function (data){
 		
 						//console.log(data);
 		
@@ -295,11 +297,11 @@
 		
 				if (edit == 1){
 		
-					fillForm(Passed);
+					fillForm(Foglio1Passed);
 		
 				}else{
 					
-					$("#messageBox").text("New ");
+					$("#messageBox").text("New Foglio1");
 					
 				}
 		
@@ -321,21 +323,21 @@
 					});
 		
 		
-				$("#content").on('click', '#submit', (function(event) {
+				$("#content").on('click', '#submitFoglio1', (function(event) {
 			        event.preventDefault();
-			        $('#').submit();
+			        $('#Foglio1').submit();
 		
 		
 			    }));
 		
-			    $("#content").on('click', '#delete', (function(event) {
+			    $("#content").on('click', '#deleteFoglio1', (function(event) {
 			        event.preventDefault();
-			        delete();
+			        deleteFoglio1();
 		
 		
 			    }));
 		
-				$("#").validate({
+				$("#Foglio1").validate({
 		
 			        invalidHandler: function(event, validator) {
 			            var errors = validator.numberOfInvalids();
@@ -352,7 +354,7 @@
 			        },
 			        submitHandler: function(form) {
 		
-			            submitForm();
+			            submitFoglio1Form();
 		
 			          	console.log("submitted form");
 		

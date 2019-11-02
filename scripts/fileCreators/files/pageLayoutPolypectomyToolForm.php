@@ -41,7 +41,7 @@
 		
 		<html>
 		<head>
-		    <title> Form</title>
+		    <title>pageLayoutPolypectomyTool Form</title>
 		</head>
 		
 		<?php
@@ -60,7 +60,7 @@
 		
 			        <div class='row'>
 		                <div class='col-9'>
-		                    <h2 style="text-align:left;"> Form</h2>
+		                    <h2 style="text-align:left;">pageLayoutPolypectomyTool Form</h2>
 		                </div>
 		
 		                <div id="messageBox" class='col-3 yellow-light narrow center'>
@@ -73,7 +73,7 @@
 		
 				        if ($id){
 		
-							$q = "SELECT    FROM    WHERE    = $id";
+							$q = "SELECT  id  FROM  pageLayoutPolypectomyTool  WHERE  id  = $id";
 							if ($general->returnYesNoDBQuery($q) != 1){
 								echo "Passed id does not exist in the database";
 								exit();
@@ -86,9 +86,29 @@
 		
 			        <p>
 		
-					    <form id="">
-					    <?php ?>
-						    <button id="submit">Submit</button>
+					    <form id="pageLayoutPolypectomyTool">
+					    <?php echo $formv1->generateText('?Number', '?Number', '', 'tooltip here');
+echo $formv1->generateText('Name', 'Name', '', 'tooltip here');
+echo $formv1->generateText('Position', 'Position', '', 'tooltip here');
+echo $formv1->generateText('Order', 'Order', '', 'tooltip here');
+echo $formv1->generateText('Type', 'Type', '', 'tooltip here');
+echo $formv1->generateText('textType', 'textType', '', 'tooltip here');
+echo $formv1->generateText('Value1', 'Value1', '', 'tooltip here');
+echo $formv1->generateText('Value2', 'Value2', '', 'tooltip here');
+echo $formv1->generateText('Weight', 'Weight', '', 'tooltip here');
+echo $formv1->generateText('Value3', 'Value3', '', 'tooltip here');
+echo $formv1->generateText('Value4', 'Value4', '', 'tooltip here');
+echo $formv1->generateText('Text', 'Text', '', 'tooltip here');
+echo $formv1->generateText('Link', 'Link', '', 'tooltip here');
+echo $formv1->generateText('Message_t', 'Message_t', '', 'tooltip here');
+echo $formv1->generateText('ForVideo', 'ForVideo', '', 'tooltip here');
+echo $formv1->generateText('SelectMultiple', 'SelectMultiple', '', 'tooltip here');
+echo $formv1->generateText('AlwaysRequired', 'AlwaysRequired', '', 'tooltip here');
+echo $formv1->generateText('RequiredIfCondition', 'RequiredIfCondition', '', 'tooltip here');
+echo $formv1->generateText('Condition', 'Condition', '', 'tooltip here');
+echo $formv1->generateText('T', 'T', '', 'tooltip here');
+?>
+						    <button id="submitpageLayoutPolypectomyTool">Submit</button>
 		
 					    </form>
 		
@@ -102,9 +122,9 @@
 		<script>
 			var siteRoot = "http://localhost:90/dashboard/esd/";
 		
-			 Passed = $("#id").text();
+			 pageLayoutPolypectomyToolPassed = $("#id").text();
 		
-			if ( Passed == ""){
+			if ( pageLayoutPolypectomyToolPassed == ""){
 		
 				var edit = 0;
 		
@@ -120,15 +140,15 @@
 		
 			function fillForm (idPassed){
 		
-				disableFormInputs("");
+				disableFormInputs("pageLayoutPolypectomyTool");
 		
-				Required = new Object;
+				pageLayoutPolypectomyToolRequired = new Object;
 		
-				Required = getNamesFormElements("");
+				pageLayoutPolypectomyToolRequired = getNamesFormElements("pageLayoutPolypectomyTool");
 		
-				String = '``=\''+idPassed+'\'';
+				pageLayoutPolypectomyToolString = '`id`=\''+idPassed+'\'';
 		
-				var selectorObject = getDataQuery ("", String, getNamesFormElements(""), 1);
+				var selectorObject = getDataQuery ("pageLayoutPolypectomyTool", pageLayoutPolypectomyToolString, getNamesFormElements("pageLayoutPolypectomyTool"), 1);
 		
 				//console.log(selectorObject);
 		
@@ -147,19 +167,19 @@
 		
 				    });
 				    
-				    $("#messageBox").text("Editing  id "+idPassed);
+				    $("#messageBox").text("Editing pageLayoutPolypectomyTool id "+idPassed);
 		
-				    enableFormInputs("");
+				    enableFormInputs("pageLayoutPolypectomyTool");
 		
 				});
 		
 				try {
 		
-					$("form#").find("button#delete").length();
+					$("form#pageLayoutPolypectomyTool").find("button#deletepageLayoutPolypectomyTool").length();
 		
 				}catch(error){
 		
-					$("form#").find("button").after("<button id='delete'>Delete</button>");
+					$("form#pageLayoutPolypectomyTool").find("button").after("<button id='deletepageLayoutPolypectomyTool'>Delete</button>");
 		
 				}
 		
@@ -168,24 +188,24 @@
 		
 			//delete behaviour
 		
-			function delete (){
+			function deletepageLayoutPolypectomyTool (){
 		
-				//Passed is the current record, some security to check its also that in the id field
+				//pageLayoutPolypectomyToolPassed is the current record, some security to check its also that in the id field
 		
-				if (Passed != $("#id").text()){
+				if (pageLayoutPolypectomyToolPassed != $("#id").text()){
 		
 					return;
 		
 				}
 		
 		
-				if (confirm("Do you wish to delete this ?")) {
+				if (confirm("Do you wish to delete this pageLayoutPolypectomyTool?")) {
 		
-					disableFormInputs("");
+					disableFormInputs("pageLayoutPolypectomyTool");
 		
-					var Object = pushDataFromFormAJAX("", "", "", Passed, "2"); //delete 
+					var pageLayoutPolypectomyToolObject = pushDataFromFormAJAX("pageLayoutPolypectomyTool", "pageLayoutPolypectomyTool", "id", pageLayoutPolypectomyToolPassed, "2"); //delete pageLayoutPolypectomyTool
 		
-					Object.done(function (data){
+					pageLayoutPolypectomyToolObject.done(function (data){
 		
 						//console.log(data);
 		
@@ -193,17 +213,17 @@
 		
 							if (data == 1){
 		
-								alert (" deleted");
+								alert ("pageLayoutPolypectomyTool deleted");
 								edit = 0;
-								Passed = null;
-								window.location.href = siteRoot + "scripts/forms/Table.php";
-								//go to  list
+								pageLayoutPolypectomyToolPassed = null;
+								window.location.href = siteRoot + "scripts/forms/pageLayoutPolypectomyToolTable.php";
+								//go to pageLayoutPolypectomyTool list
 		
 							}else {
 		
 							alert("Error, try again");
 		
-							enableFormInputs("");
+							enableFormInputs("pageLayoutPolypectomyTool");
 		
 						    }
 		
@@ -219,24 +239,24 @@
 		
 			}
 		
-			function submitForm (){
+			function submitpageLayoutPolypectomyToolForm (){
 		
 				//pushDataFromFormAJAX (form, table, identifierKey, identifier, updateType)
 		
 				if (edit == 0){
 		
-					var Object = pushDataFromFormAJAX("", "", "", null, "0"); //insert new object
+					var pageLayoutPolypectomyToolObject = pushDataFromFormAJAX("pageLayoutPolypectomyTool", "pageLayoutPolypectomyTool", "id", null, "0"); //insert new object
 		
-					Object.done(function (data){
+					pageLayoutPolypectomyToolObject.done(function (data){
 		
 						//console.log(data);
 		
 						if (data){
 		
-							alert ("New  no "+data+" created");
+							alert ("New pageLayoutPolypectomyTool no "+data+" created");
 							edit = 1;
 							$("#id").text(data);
-							Passed = data;
+							pageLayoutPolypectomyToolPassed = data;
 							fillForm(data);
 		
 		
@@ -253,9 +273,9 @@
 		
 				} else if (edit == 1){
 		
-					var Object = pushDataFromFormAJAX("", "", "", Passed, "1"); //insert new object
+					var pageLayoutPolypectomyToolObject = pushDataFromFormAJAX("pageLayoutPolypectomyTool", "pageLayoutPolypectomyTool", "id", pageLayoutPolypectomyToolPassed, "1"); //insert new object
 		
-					Object.done(function (data){
+					pageLayoutPolypectomyToolObject.done(function (data){
 		
 						//console.log(data);
 		
@@ -295,11 +315,11 @@
 		
 				if (edit == 1){
 		
-					fillForm(Passed);
+					fillForm(pageLayoutPolypectomyToolPassed);
 		
 				}else{
 					
-					$("#messageBox").text("New ");
+					$("#messageBox").text("New pageLayoutPolypectomyTool");
 					
 				}
 		
@@ -321,21 +341,21 @@
 					});
 		
 		
-				$("#content").on('click', '#submit', (function(event) {
+				$("#content").on('click', '#submitpageLayoutPolypectomyTool', (function(event) {
 			        event.preventDefault();
-			        $('#').submit();
+			        $('#pageLayoutPolypectomyTool').submit();
 		
 		
 			    }));
 		
-			    $("#content").on('click', '#delete', (function(event) {
+			    $("#content").on('click', '#deletepageLayoutPolypectomyTool', (function(event) {
 			        event.preventDefault();
-			        delete();
+			        deletepageLayoutPolypectomyTool();
 		
 		
 			    }));
 		
-				$("#").validate({
+				$("#pageLayoutPolypectomyTool").validate({
 		
 			        invalidHandler: function(event, validator) {
 			            var errors = validator.numberOfInvalids();
@@ -352,7 +372,7 @@
 			        },
 			        submitHandler: function(form) {
 		
-			            submitForm();
+			            submitpageLayoutPolypectomyToolForm();
 		
 			          	console.log("submitted form");
 		

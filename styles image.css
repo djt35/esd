@@ -209,6 +209,15 @@ p {
 
 }
 
+.fixed {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    position: fixed;
+    /*transform: translateY(75%);*/
+    z-index: 9998;
+    background-color: black;
+}
+
 .responsiveContainer2 {
 
     /*use for outer box on description pages*/
@@ -475,8 +484,9 @@ button:hover {
 
 .yellow-light {
 
-    background-color: #fcdd85;
-    color: black;
+    border: solid 1px #fcdd85;
+    background-color: black;
+    color: white;
 
 }
 
@@ -488,6 +498,12 @@ button:hover {
 }
 
 strong {
+
+    color: #fbc934;
+
+}
+
+.strong {
 
     color: #fbc934;
 
@@ -1243,6 +1259,18 @@ label textarea {
     text-align: left;
     display: inline-block;
     margin-top: 3px;
+    float: left;
+}
+
+.buttonNavigate {
+    background-color: rgba(38, 111, 221, 0.411);
+    /* Green */
+    font-size: 0.75em;
+    border: 1px white;
+    color: white;
+    text-align: left;
+    display: inline-block;
+    margin: 0.25vw;
     float: left;
 }
 

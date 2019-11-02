@@ -18,21 +18,25 @@ require(BASE_URI . '/scripts/interpretUserAccess.php');
 
 ?>
 
+<noscript>
+    <style type="text/css">
+        .content {display:none;}
+        #content {display:none;}
+    </style>
+    <div class="noscriptmsg">
+    You don't have javascript enabled. It is required to view this site.
+    </div>
+</noscript>
+
  <script src="<?php echo BASE_URL . '/includes/jquery.min.js'; ?>" type="text/javascript"></script>
    
 	    <script src="<?php echo BASE_URL . '/includes/generaljs.js'; ?>" type="text/javascript">
 </script>
 
-	    
-</script>
+	
 
 
 
-<script>
-	
-	
-	
-</script>
 
 
 

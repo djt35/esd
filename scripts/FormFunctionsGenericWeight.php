@@ -12,7 +12,7 @@
 
 
 
-        function generateSelect($stext, $sname, $svalue1, $svalue2, $post, $message, $general, $tableNameValues) {
+        function generateSelect($stext, $sname, $svalue1, $svalue2, $post, $message, $general, $tableNameValues, $weight) {
 	        
 			if ($message){
             echo "
@@ -29,7 +29,7 @@
 			
             echo "<option disabled hidden selected value></option>";
             
-            echo $general->writeSelect($svalue1, $svalue2, $tableNameValues);
+            echo $general->writeSelectWeight($svalue1, $svalue2, $tableNameValues, $weight);
 
             echo "</select>"; 
             echo "<a class='reset' title='reset this field'>&nbsp;&#x2717;</a>";

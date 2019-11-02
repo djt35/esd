@@ -1,16 +1,22 @@
 
 		
 		
-			<?php
+		<?php
 		
-			require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
+		$openaccess = 0;
+		$requiredUserLevel = 2;
+		
+		require ('../../includes/config.inc.php');		
+		
+		require (BASE_URI.'/scripts/headerCreator.php');
 		
 			$formv1 = new formGenerator;
 			$general = new general;
 			$video = new video;
             $tagCategories = new tagCategories;
             $esdLesion = new esdLesion;
-            $valuesObject = new valuesESD;
+			$valuesObject = new valuesESD;
+			$polypectomyAssessmentTool = new PolypectomyAssessmentTool;
 		
 		
 		
@@ -115,7 +121,9 @@
                         }catch(PDOException $pe){
                                 echo $pe->getMessage();
                             }  */ 
-                        $valuesObject->writeSelect('Ethnicity', 'Ethnicity_t');
+						//$valuesObject->writeSelect('Ethnicity', 'Ethnicity_t');
+						$polypectomyAssessmentTool->Load_from_key(1);
+						$polypectomyAssessmentTool->numberOfRows();
                         //$esdLesion->Load_from_key(1);
                         //echo $esdLesion->getIndicationforESD();
                         //$esdLesion->setIndicationforESD('3');

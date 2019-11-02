@@ -135,18 +135,18 @@ echo $formv1->generateText('Prophylaxis_bleed', 'Prophylaxis_bleed', '', 'toolti
 echo $formv1->generateText('Prophylaxis_bleed_t', 'Prophylaxis_bleed_t', '', 'tooltip here');
 echo $formv1->generateText('R0', 'R0', '', 'tooltip here');
 echo $formv1->generateText('R0_t', 'R0_t', '', 'tooltip here');
-echo $formv1->generateText('Scope Type', 'Scope Type', '', 'tooltip here');
-echo $formv1->generateText('Scope Type_t', 'Scope Type_t', '', 'tooltip here');
+echo $formv1->generateText('ScopeType', 'ScopeType', '', 'tooltip here');
+echo $formv1->generateText('ScopeType_t', 'ScopeType_t', '', 'tooltip here');
 echo $formv1->generateText('SE_Rx', 'SE_Rx', '', 'tooltip here');
 echo $formv1->generateText('SE_Rx_t', 'SE_Rx_t', '', 'tooltip here');
 echo $formv1->generateText('SE_HISTO_Rec_Res', 'SE_HISTO_Rec_Res', '', 'tooltip here');
 echo $formv1->generateText('SE_HISTO_Rec_Res_t', 'SE_HISTO_Rec_Res_t', '', 'tooltip here');
 echo $formv1->generateText('Sex', 'Sex', '', 'tooltip here');
 echo $formv1->generateText('Sex_t', 'Sex_t', '', 'tooltip here');
-echo $formv1->generateText('SMI Depth', 'SMI Depth', '', 'tooltip here');
-echo $formv1->generateText('SMI Depth_t', 'SMI Depth_t', '', 'tooltip here');
-echo $formv1->generateText('SurgTStge', 'SurgTStge', '', 'tooltip here');
-echo $formv1->generateText('SurgTStge_t', 'SurgTStge_t', '', 'tooltip here');
+echo $formv1->generateText('SMIDepth', 'SMIDepth', '', 'tooltip here');
+echo $formv1->generateText('SMIDepth_t', 'SMIDepth_t', '', 'tooltip here');
+echo $formv1->generateText('SurgTStage', 'SurgTStage', '', 'tooltip here');
+echo $formv1->generateText('SurgTStage_t', 'SurgTStage_t', '', 'tooltip here');
 echo $formv1->generateText('SurgLN', 'SurgLN', '', 'tooltip here');
 echo $formv1->generateText('SurgLN_t', 'SurgLN_t', '', 'tooltip here');
 echo $formv1->generateText('SurgM', 'SurgM', '', 'tooltip here');
@@ -170,22 +170,7 @@ echo $formv1->generateText('Yes_no_t', 'Yes_no_t', '', 'tooltip here');
 		
 		    </div>
 		<script>
-			switch (true) {
-				case winLocation('endoscopy.wiki'):
-
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-				case winLocation('localhost'):
-					var rootFolder = 'http://localhost:90/dashboard/esd/';
-					break;
-				default: // set whatever you want
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-			}
-
-
-
-    var siteRoot = rootFolder;
+			var siteRoot = "http://localhost:90/dashboard/esd/";
 		
 			 valuesESDPassed = $("#id").text();
 		
