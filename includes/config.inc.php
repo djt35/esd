@@ -77,7 +77,7 @@ if ($local) {
 $root = BASE_URI . '/';
 $roothttp = BASE_URL . '/';
 
-define('redirect_location', BASE_URL . '/index.php');
+//define('redirect_location', BASE_URL . '/index.php');
 //echo redirect_location;
     
 /* 
