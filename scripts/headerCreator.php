@@ -1,17 +1,24 @@
 <?php
 	
-(1);
+error_reporting(E_ALL);
 
+echo 'hello 1';
 require(BASE_URI . '/includes/login_functions.php');
+
+
 
 //place to redirect the user if not allowed access
 if (!isset($location)){
     $location = BASE_URL . '/index.php';
 }
 
+echo 'hello 2';
+
 if (!($dbc)){
     require(DB);
     }
+
+    echo 'hello 3';
 
 require(BASE_URI . '/scripts/interpretUserAccess.php');
 
