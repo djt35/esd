@@ -60,14 +60,17 @@ if ($local) {
 } else {
 
     define('BASE_URI', $_SERVER['DOCUMENT_ROOT'].'/esd');
+    echo BASE_URI;
     define('BASE_URL', 'https://www.endoscopy.wiki/esd');
+    echo BASE_URL;
     define('DB', $_SERVER['DOCUMENT_ROOT'].'/mysqli_connect_POEM.inc.php');
+    echo DB;
     
     function class_loader($class) {
 		
 			require($_SERVER['DOCUMENT_ROOT'].'/esd/classes/'.$class.'.class.php');
 		 	
-		}
+	}
 	
 	
 	spl_autoload_register ('class_loader');
