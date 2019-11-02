@@ -61,7 +61,7 @@ if ($local) {
 
     define('BASE_URI', $_SERVER['DOCUMENT_ROOT'].'/esd');
     define('BASE_URL', 'https://www.endoscopy.wiki/esd');
-    define('DB', '../../../mysqli_connect_POEM.inc.php');
+    define('DB', $_SERVER['DOCUMENT_ROOT'].'/mysqli_connect_POEM.inc.php');
     
     function class_loader($class) {
 		
