@@ -51,7 +51,7 @@ Class DataBaseMysqlPDO {
 		//			echo "Error connect to mysql";die;
 		//		}
 		try{
-			$this->conn = new PDO('mysql:host=127.0.0.1;port=3306;dbname=esdv1;charset=utf8','djt','nevira1pine',array(
+			$this->conn = new PDO('mysql:host=localhost;port=3306;dbname=esdv1;charset=utf8','djt','nevira1pine',array(
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			));
 			//var_dump($this->conn);

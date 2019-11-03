@@ -640,8 +640,8 @@ function logout(){
 		   });
 
 	request.done(function(data){
-			   var siteRootesd = siteRoot.replace('/learning/','');
-
+			   //var siteRootesd = siteRoot.replace('/learning/','');
+				console.log(siteRoot + "index.php");
 			   window.location.href = siteRoot + "index.php";
 
 		   });

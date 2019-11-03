@@ -1,28 +1,14 @@
 <?php
 
     
-    $host = substr($_SERVER['HTTP_HOST'], 0, 5);
-if (in_array($host, array('local', '127.0', '192.1'))) {
-    $local = TRUE;
-} else {
-    $local = FALSE;
-}
+//require ('config.inc.php');
+//$openaccess = 1;		
 
-if ($local){
-
-    $root = $_SERVER['DOCUMENT_ROOT'].'/dashboard/esd/';
-    $roothttp = 'http://' . $_SERVER['HTTP_HOST'].'/dashboard/esd/';
-    //require($_SERVER['DOCUMENT_ROOT'].'/dashboard/esd/includes/config.inc.php');
-}else{
-    $root = $_SERVER['DOCUMENT_ROOT'].'/esd/';
-    $roothttp = 'http://' . $_SERVER['HTTP_HOST'].'/esd/';
-
-   // require($_SERVER['DOCUMENT_ROOT'].'/esd/includes/config.inc.php');
-
-}
+//require (BASE_URI . '/scripts/headerScript.php');
     
-    
-    function redirect_user ($page='elearn.php') {
+    require(DB);    
+
+    function redirect_user ($page='index.php') {
         header ("Location: $page");
         exit ();
     }
@@ -46,30 +32,32 @@ if ($local){
             $errors = array();
         
             //email address is present;
-            if (empty($_POST['email'])) {
+            if (empty($email)) {
                 $errors[]='Please enter a valid email address';
             } else {
-                $e = mysqli_real_escape_string($dbc, trim($_POST['email']));
+                $e = mysqli_real_escape_string($dbc, trim($email));
+                //echo $e;
             }
         
             //password;
-            if (empty($_POST['pass'])) {
-                $errors[]='Please enter a password';
+            if (empty($pass)) {
+                $errors[]='Please enter a valid password';
             } else {
 				$salt = 'westmead';
-                $password = mysqli_real_escape_string($dbc, trim($_POST['pass']));
-				$p = hash_password($password, $salt);
+                $password = mysqli_real_escape_string($dbc, trim($pass));
+                $p = hash_password($password, $salt);
+                //echo $p;
             }
         
         if (empty ($errors)) {
             
-            $q = "SELECT user_id, firstname, surname, centre FROM users WHERE email='$e' AND password='$p'";
-            
+            $q = "SELECT `user_id`, `firstname`, `surname`, `centre`, `access_level` FROM users WHERE email='$e' AND password='$p'";
+            //echo $q;
+
             $r = @mysqli_query ($dbc, $q);
             
                 if ((mysqli_num_rows($r))==1) {
                     //match detected;
-                    //echo '<h1> User detected, you could login if I knew how </h1>';
                     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
                     return array(true, $row);
                     

@@ -1,10 +1,10 @@
 
  <?php
 	 
-	 $openaccess = 1;
+	 //$openaccess = 1;
 	 
-	 require ('../../includes/config.inc.php');		
-	 require (BASE_URI.'/scripts/headerScript.php');
+	 require ('../includes/config.inc.php');		
+	 //require (BASE_URI.'/scripts/headerScript.php');
 
 
 
@@ -15,12 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	// Need two helper files:
 
-	if ($local){
-		require ($_SERVER['DOCUMENT_ROOT'].'/dashboard/esd/includes/login_functions.php');
-	}else{
-
-		require($_SERVER['DOCUMENT_ROOT'].'/esd/includes/login_functions.php');
-	}
+	require (BASE_URI.'/includes/login_functions.php');
+	
 	require (DB);
 
 	// Check the login:
@@ -34,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['user_id'] = $data['user_id'];
 		$_SESSION['firstname'] = $data['firstname'];
 		$_SESSION['surname'] = $data['surname'];
+		$_SESSION['access_level'] = $data['access_level'];
 		
 
 

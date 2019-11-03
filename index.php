@@ -258,7 +258,7 @@
 								
 								//select 9 random grade 1 images from the databse and dsiplay
 								
-								$general->getHighestRatedImagesCoverResection (BASE_URL);
+								//$general->getHighestRatedImagesCoverResection (BASE_URL);
 								
 								
 							?>
@@ -453,18 +453,18 @@
 		
 
 switch (true) {
-				case winLocation('endoscopy.wiki'):
+	case winLocation('endoscopy.wiki'):
 
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-				case winLocation('localhost'):
-					var rootFolder = 'http://localhost:90/dashboard/esd/';
-					break;
-				default: // set whatever you want
-					var rootFolder = 'https://www.endoscopy.wiki/esd';
-					break;
-			}
-			
+		var rootFolder = 'https://www.endoscopy.wiki/esd/';
+		break;
+	case winLocation('localhost'):
+		var rootFolder = 'http://localhost:90/dashboard/esd/';
+		break;
+	default: // set whatever you want
+		var rootFolder = 'https://www.endoscopy.wiki/esd/';
+		break;
+}
+
 var siteRoot = rootFolder;
 
 /*function mobileMenuShow(){
