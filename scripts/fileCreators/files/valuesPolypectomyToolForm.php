@@ -350,7 +350,20 @@ echo $formv1->generateText('Yes_no_addweight_denominator', 'Yes_no_addweight_den
 		
 		    </div>
 		<script>
-			var siteRoot = "http://localhost:90/dashboard/esd/";
+			switch (true) {
+	case winLocation('endoscopy.wiki'):
+
+		var rootFolder = 'https://www.endoscopy.wiki/esd/';
+		break;
+	case winLocation('localhost'):
+		var rootFolder = 'http://localhost:90/dashboard/esd/';
+		break;
+	default: // set whatever you want
+		var rootFolder = 'https://www.endoscopy.wiki/esd/';
+		break;
+}
+
+			var siteRoot = rootFolder;
 		
 			 valuesPolypectomyToolPassed = $("#id").text();
 		

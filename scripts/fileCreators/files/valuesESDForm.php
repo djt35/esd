@@ -170,7 +170,20 @@ echo $formv1->generateText('Yes_no_t', 'Yes_no_t', '', 'tooltip here');
 		
 		    </div>
 		<script>
-			var siteRoot = "http://localhost:90/dashboard/esd/";
+			switch (true) {
+	case winLocation('endoscopy.wiki'):
+
+		var rootFolder = 'https://www.endoscopy.wiki/esd/';
+		break;
+	case winLocation('localhost'):
+		var rootFolder = 'http://localhost:90/dashboard/esd/';
+		break;
+	default: // set whatever you want
+		var rootFolder = 'https://www.endoscopy.wiki/esd/';
+		break;
+}
+
+			var siteRoot = rootFolder;
 		
 			 valuesESDPassed = $("#id").text();
 		
