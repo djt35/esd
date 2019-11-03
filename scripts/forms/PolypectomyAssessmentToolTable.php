@@ -4,7 +4,7 @@
 		
 		
 		$openaccess = 0;
-		$requiredUserLevel = 4;
+		$requiredUserLevel = 1;
 		
 		require ('../../includes/config.inc.php');		
 		
@@ -28,7 +28,7 @@
 		<?php
 		//include($root . "/scripts/logobar.php");
 		
-		include($root . "/includes/naviCreator.php");
+		include($root . "/includes/naviERCP.php");
 		?>
 		
 		
@@ -37,7 +37,7 @@
 				
 		    <div id='content' class='content'>
 			    
-		        <div class='responsiveContainer white'>
+		        <div class='responsiveContainer'>
 			        
 			        <div class='row'>
 		                <div class='col-9'>
