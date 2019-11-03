@@ -118,6 +118,7 @@
 		
 					<?php 
 						
+						$table = "PolypectomyAssessmentTool";
 						$tableNameValues = "valuesPolypectomyTool";
 						$tableNameSheet = "pageLayoutPolypectomyTool";
 

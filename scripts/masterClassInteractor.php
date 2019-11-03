@@ -3,14 +3,11 @@
 			$openaccess = 0;
 			$requiredUserLevel = 4;
 			require ('../includes/config.inc.php');		
-		require (BASE_URI.'/scripts/headerScript.php');
+			require (BASE_URI.'/scripts/headerScript.php');
 
 
 $general = new general;
 
-//modify database in use here
-
-$esdLesion = new PolypectomyAssessmentTool;
 
 
 
@@ -57,6 +54,12 @@ if (count($_GET) > 0){
 		exit();	
 		
 	}
+
+	//database passed from javascript
+	//cannot be a table where a class does not exist
+	eval('$esdLesion = new ' . $table . ';');
+	
+
 	
 	if (!isset($update)){
 		
@@ -296,5 +299,6 @@ if (count($_GET) > 0){
 }
 
 $general->endGeneral();
-$esdLesion->endPolypectomyAssessmentTool();
+eval('$esdLesion->end' . $table . '();');
+
 
