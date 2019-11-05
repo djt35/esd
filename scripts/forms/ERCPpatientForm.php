@@ -63,7 +63,7 @@
 		
 		    <div id='content' class='content'>
 		
-		        <div class='responsiveContainer white'>
+		        <div class='responsiveContainer'>
 		
 			        <div class='row'>
 		                <div class='col-9'>
