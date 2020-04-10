@@ -297,6 +297,7 @@ class general {
 
 			echo '<table id="dataTable">';
 
+			echo '<thead>';
 			echo '<tr>';
 
 			foreach ($data as $key=>$value){
@@ -309,26 +310,28 @@ class general {
 			}
 
 			echo '</tr>';
+			echo '</thead>';
+			echo '<tbody>';
 
 			foreach ($data as $k=>$v){
 
+				if ($v){
+					echo '<tr class="datarow">';
 
-				echo '<tr class="datarow">';
-
-				foreach($v as $key=>$value){
+					foreach($v as $key=>$value){
 
 
-					echo '<td>';
-					echo $value;
-					echo '</td>';
+						echo '<td>';
+						echo $value;
+						echo '</td>';
 
+					}
+
+					echo '</tr>';
 				}
 
-				echo '</tr>';
-
-
 			}
-
+			echo '</tbody>';
 
 
 			echo '</table>';
@@ -1986,6 +1989,46 @@ INNER JOIN `imagesDraft` as c on b.`image_id` = c.`id` WHERE a.`approved` IS NUL
 						$returnString .= " data-weight = '{\"weight\":\"$dataWeight\", \"denominator\":\"$dataDenominator\"}'";
 					}
 					$returnString .= ">".$row[$svalue1]." ".$row[$svalue2]."</option>"; 
+			
+			}
+		}
+
+		return $returnString;
+
+	 }	
+
+	 public function writeCheckedWeight($sname, $svalue1, $svalue2, $tableNameValues, $weight){
+
+		if ($weight == '1'){
+			$q = "SELECT `".$svalue1."`, `".$svalue2."`, `".$svalue1."_weight`, `".$svalue1."_denominator` FROM `$tableNameValues` WHERE `".$svalue1."` IS NOT NULL AND `".$svalue2."` <> ''";
+			//echo $q;
+			$result = $this->connection->RunQuery($q);
+			//print_r($result);
+
+		}else{
+
+			$q = "SELECT `".$svalue1."`, `".$svalue2."` FROM `$tableNameValues` WHERE `".$svalue1."` IS NOT NULL AND `".$svalue2."` <> ''";
+			//echo $q;
+			$result = $this->connection->RunQuery($q);
+			//print_r($result);
+		}
+
+		$returnString = "";
+
+		if ($result){
+			while($row = $result->fetch_array(MYSQLI_ASSOC)){
+
+				$returnString .= "<input type='checkbox' class='forminputs' name='$sname" . $row[$svalue1] . "'";
+
+					//echo $weight;
+					if ($weight) {
+
+						$dataWeight = $row[$svalue1.'_weight'];
+						$dataDenominator = $row[$svalue1.'_denominator'];
+
+						$returnString .= " data-weight = '{\"weight\":\"$dataWeight\", \"denominator\":\"$dataDenominator\"}'";
+					}
+					$returnString .= ">" . $row[$svalue1] . " - " . $row[$svalue2] . "<br>"; 
 			
 			}
 		}

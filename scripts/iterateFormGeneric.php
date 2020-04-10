@@ -14,7 +14,7 @@
                     
                 } 
                 elseif (($value["Type"])==2){
-                    if($value["textType"]==1){$type="number";}elseif($value["textType"]==2){$type="text";}elseif($value["textType"]==3){$type="date";}
+                    if($value["textType"]==1){$type="number";}elseif($value["textType"]==2){$type="text";}elseif($value["textType"]==3){$type=3;}
                     
                     generateText (($value["Text"]), ($value["Name"]) , $type, $_POST[($value["Name"])], ($value["Message_t"]));  
                     

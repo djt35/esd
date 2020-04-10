@@ -2,13 +2,21 @@
 		
 		
 			<?php
+
+			$openaccess = 0;
+			$requiredUserLevel = 4;
+
+			require ('../../includes/config.inc.php');		
+
+			require (BASE_URI.'/scripts/headerCreatorv2.php');
 		
-			require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
+			//require ('/Applications/XAMPP/xamppfiles/htdocs/dashboard/esd/scripts/headerCreator.php');
 		
 			$formv1 = new formGenerator;
 			$general = new general;
 			$video = new video;
 			$tagCategories = new tagCategories;
+			$esdLesion = new POEM;
 		
 		
 		
@@ -45,27 +53,24 @@
 		</head>
 		
 		<?php
-		include($root . "/scripts/logobar.php");
-		
-		include($root . "/includes/naviCreator.php");
+	include(BASE_URI . "/includes/topbar.php");
+	include(BASE_URI . "/includes/naviv2.php");
 		?>
 		
 		<body>
 		
 			<div id="id" style="display:none;"><?php if ($id){echo $id;}?></div>
 		
-		    <div id='content' class='content'>
+		    <div id='content' class='mt-6 container content'>
 		
 		        <div class='responsiveContainer white'>
 		
 			        <div class='row'>
-		                <div class='col-9'>
+		                <div class='col-12'>
 		                    <h2 style="text-align:left;">POEM Form</h2>
 		                </div>
 		
-		                <div id="messageBox" class='col-3 yellow-light narrow center'>
-		                    <p></p>
-		                </div>
+		              
 		            </div>
 		
 		
@@ -87,7 +92,8 @@
 			        <p>
 		
 					    <form id="POEM">
-					    <?php ?>
+						
+					    <?php include(BASE_URI.'/classes/formPOEM.html');?>
 						    <button id="submitPOEM">Submit</button>
 		
 					    </form>
@@ -99,6 +105,11 @@
 		        </div>
 		
 		    </div>
+
+			<!-- Datatables -->
+<script src="<?php echo BASE_URL1; ?>/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo BASE_URL1; ?>/assets/libs/datatables/dataTables.min.js"></script>
+
 		<script>
 			switch (true) {
 	case winLocation('endoscopy.wiki'):

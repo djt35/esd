@@ -76,5 +76,33 @@
             echo "/> </textarea></label></td></tr>\n";
             
         }
+
+        function generateChecked ($stext, $sname, $svalue1, $svalue2, $post, $message, $general, $tableNameValues, $weight){
+
+
+            if ($message){
+                echo "
+                <tr>
+                <td style=\"width:60%;\" title='$message'>
+                     <div class='tooltip'>".$stext." : </div></td>";
+                
+                
+                }else{
+                    echo "<tr> <td style=\"width:60%;\">".$stext." : </td>";
+                    
+                }
+                
+                echo "
+                <td style=\"width:30%;\">";
+                
+                echo $general->writeCheckedWeight($sname, $svalue1, $svalue2, $tableNameValues, $weight);
+    
+               
+                echo "<a class='reset' title='reset this field'>&nbsp;&#x2717;</a>";
+                echo "</td>
+                
+                
+                </tr>";
+        }
        
        ?>

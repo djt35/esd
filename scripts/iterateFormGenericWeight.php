@@ -32,6 +32,10 @@
                     generateHidden (($value["Text"]), ($value["Name"]) , 'hidden', $_POST[($value["Name"])]);  
                     
                 } 
+
+                elseif (($value["Type"])==6){
+                    generateChecked (($value["Text"]), ($value["Name"]) , ($value["Value1"]), ($value2), $_POST[($value["Name"])], ($value["Message_t"]), $general, $tableNameValues, ($value["Weight"])); 
+                } 
             }
 
        ?>
