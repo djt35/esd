@@ -2,7 +2,7 @@
 /*
  * Author: David Tate  - www.gieqs.com
  *
- * Create Date: 10-04-2020
+ * Create Date: 11-04-2020
  *
  * DJT 2019
  *
@@ -49,9 +49,16 @@ Class POEM {
 	private $POEM_GOJ_distance; //int(2)
 	private $POEM_incision_distance; //int(2)
 	private $POEM_incision_position; //int(2)
+	private $submucosal_tunnel_bottom; //varchar(100)
+	private $myotomy_top; //varchar(100)
+	private $myotomy_bottom; //varchar(100)
+	private $myotomy_full_thickness_length_distal; //varchar(100)
 	private $POEM_myotomy_length; //int(2)
 	private $POEM_perforation; //int(1)
 	private $POEM_IPB; //int(1)
+	private $IPB_solution; //varchar(100)
+	private $tunnel_exit; //varchar(11)
+	private $tunnel_exit_solution; //varchar(100)
 	private $POEM_current; //int(1)
 	private $POEM_number_clips; //int(1)
 	private $POEM_glucagon; //int(1)
@@ -109,7 +116,7 @@ Class POEM {
      * New object to the class. Don�t forget to save this new object "as new" by using the function $class->Save_Active_Row_as_New();
      *
      */
-	public function New_POEM($MRN,$DOB,$comorbidity,$comorbidity_other,$weight,$medication_aspirin,$medication_clopidogrel,$medication_warfarin,$medication_other,$previous_treatment_PPI,$previous_treatment_CACB,$previous_treatment_NITR,$previous_treatment_SSRI,$previous_treatment_Dilatation,$previous_treatment_botulinum,$weight_loss,$symptoms_regurg,$symptoms_dysphagia,$symptoms_chestpain,$symptoms_heartburn,$symptoms_other,$Eckart_prior,$prev_hrm,$prev_hrm_rp,$prev_hrm_relaxLES,$prev_hrm_UES,$prev_hrm_diagnosis,$barium_swallow_date,$barium_swallow_result,$gastroscopy_prev,$POEM_duration_total,$POEM_duration_tunnel,$POEM_GOJ_distance,$POEM_incision_distance,$POEM_incision_position,$POEM_myotomy_length,$POEM_perforation,$POEM_IPB,$POEM_current,$POEM_number_clips,$POEM_glucagon,$POEM_buscopan,$POEM_antibiotics,$POEM_complication,$POEM_complication_type,$POEM_admission_days,$post_symptoms,$post_Eckart,$post_HRM_resting,$post_HRM_GOJ,$_k_patient,$post_HRM_relaxLOS,$post_HRM_UESnormal,$post_HRM_diagnosis,$post_bariumswallow_date,$post_bariumswallow_diagnosis,$post_gastroscopy,$post_gastroscopy_result,$post_datecollected,$current_weight,$diagnosis,$barium_swallow_done,$ComplicationDetails,$ProcedureDate,$CompleteFUCheck,$Referrer,$ReferrerFax,$ReferrerEmail,$Firstname,$Surname,$IPSubcutEmphysema,$IPSubcutEmphysemaMx,$gastroscopy_prevdilated,$gastroscopy_prevresistance,$gastroscopy_prevopenCOJ,$gastroscopy_prevspasm,$gastroscopy_prevother,$post_Eckart_dysphagia,$post_Eckart_regurgitation,$post_Eckart_pain,$post_Eckart_wtloss,$pre_Eckart_dysphagia,$pre_Eckart_regurgitation,$pre_Eckart_wtloss,$pre_Eckart_pain){
+	public function New_POEM($MRN,$DOB,$comorbidity,$comorbidity_other,$weight,$medication_aspirin,$medication_clopidogrel,$medication_warfarin,$medication_other,$previous_treatment_PPI,$previous_treatment_CACB,$previous_treatment_NITR,$previous_treatment_SSRI,$previous_treatment_Dilatation,$previous_treatment_botulinum,$weight_loss,$symptoms_regurg,$symptoms_dysphagia,$symptoms_chestpain,$symptoms_heartburn,$symptoms_other,$Eckart_prior,$prev_hrm,$prev_hrm_rp,$prev_hrm_relaxLES,$prev_hrm_UES,$prev_hrm_diagnosis,$barium_swallow_date,$barium_swallow_result,$gastroscopy_prev,$POEM_duration_total,$POEM_duration_tunnel,$POEM_GOJ_distance,$POEM_incision_distance,$POEM_incision_position,$submucosal_tunnel_bottom,$myotomy_top,$myotomy_bottom,$myotomy_full_thickness_length_distal,$POEM_myotomy_length,$POEM_perforation,$POEM_IPB,$IPB_solution,$tunnel_exit,$tunnel_exit_solution,$POEM_current,$POEM_number_clips,$POEM_glucagon,$POEM_buscopan,$POEM_antibiotics,$POEM_complication,$POEM_complication_type,$POEM_admission_days,$post_symptoms,$post_Eckart,$post_HRM_resting,$post_HRM_GOJ,$_k_patient,$post_HRM_relaxLOS,$post_HRM_UESnormal,$post_HRM_diagnosis,$post_bariumswallow_date,$post_bariumswallow_diagnosis,$post_gastroscopy,$post_gastroscopy_result,$post_datecollected,$current_weight,$diagnosis,$barium_swallow_done,$ComplicationDetails,$ProcedureDate,$CompleteFUCheck,$Referrer,$ReferrerFax,$ReferrerEmail,$Firstname,$Surname,$IPSubcutEmphysema,$IPSubcutEmphysemaMx,$gastroscopy_prevdilated,$gastroscopy_prevresistance,$gastroscopy_prevopenCOJ,$gastroscopy_prevspasm,$gastroscopy_prevother,$post_Eckart_dysphagia,$post_Eckart_regurgitation,$post_Eckart_pain,$post_Eckart_wtloss,$pre_Eckart_dysphagia,$pre_Eckart_regurgitation,$pre_Eckart_wtloss,$pre_Eckart_pain){
 		$this->MRN = $MRN;
 		$this->DOB = $DOB;
 		$this->comorbidity = $comorbidity;
@@ -145,9 +152,16 @@ Class POEM {
 		$this->POEM_GOJ_distance = $POEM_GOJ_distance;
 		$this->POEM_incision_distance = $POEM_incision_distance;
 		$this->POEM_incision_position = $POEM_incision_position;
+		$this->submucosal_tunnel_bottom = $submucosal_tunnel_bottom;
+		$this->myotomy_top = $myotomy_top;
+		$this->myotomy_bottom = $myotomy_bottom;
+		$this->myotomy_full_thickness_length_distal = $myotomy_full_thickness_length_distal;
 		$this->POEM_myotomy_length = $POEM_myotomy_length;
 		$this->POEM_perforation = $POEM_perforation;
 		$this->POEM_IPB = $POEM_IPB;
+		$this->IPB_solution = $IPB_solution;
+		$this->tunnel_exit = $tunnel_exit;
+		$this->tunnel_exit_solution = $tunnel_exit_solution;
 		$this->POEM_current = $POEM_current;
 		$this->POEM_number_clips = $POEM_number_clips;
 		$this->POEM_glucagon = $POEM_glucagon;
@@ -242,9 +256,16 @@ Class POEM {
 			$this->POEM_GOJ_distance = $row["POEM_GOJ_distance"];
 			$this->POEM_incision_distance = $row["POEM_incision_distance"];
 			$this->POEM_incision_position = $row["POEM_incision_position"];
+			$this->submucosal_tunnel_bottom = $row["submucosal_tunnel_bottom"];
+			$this->myotomy_top = $row["myotomy_top"];
+			$this->myotomy_bottom = $row["myotomy_bottom"];
+			$this->myotomy_full_thickness_length_distal = $row["myotomy_full_thickness_length_distal"];
 			$this->POEM_myotomy_length = $row["POEM_myotomy_length"];
 			$this->POEM_perforation = $row["POEM_perforation"];
 			$this->POEM_IPB = $row["POEM_IPB"];
+			$this->IPB_solution = $row["IPB_solution"];
+			$this->tunnel_exit = $row["tunnel_exit"];
+			$this->tunnel_exit_solution = $row["tunnel_exit_solution"];
 			$this->POEM_current = $row["POEM_current"];
 			$this->POEM_number_clips = $row["POEM_number_clips"];
 			$this->POEM_glucagon = $row["POEM_glucagon"];
@@ -345,9 +366,16 @@ $q = "Select * from `POEM` LIMIT " . $x . ", " . $y;
 			$rowReturn[$x]["POEM_GOJ_distance"] = $row["POEM_GOJ_distance"];
 			$rowReturn[$x]["POEM_incision_distance"] = $row["POEM_incision_distance"];
 			$rowReturn[$x]["POEM_incision_position"] = $row["POEM_incision_position"];
+			$rowReturn[$x]["submucosal_tunnel_bottom"] = $row["submucosal_tunnel_bottom"];
+			$rowReturn[$x]["myotomy_top"] = $row["myotomy_top"];
+			$rowReturn[$x]["myotomy_bottom"] = $row["myotomy_bottom"];
+			$rowReturn[$x]["myotomy_full_thickness_length_distal"] = $row["myotomy_full_thickness_length_distal"];
 			$rowReturn[$x]["POEM_myotomy_length"] = $row["POEM_myotomy_length"];
 			$rowReturn[$x]["POEM_perforation"] = $row["POEM_perforation"];
 			$rowReturn[$x]["POEM_IPB"] = $row["POEM_IPB"];
+			$rowReturn[$x]["IPB_solution"] = $row["IPB_solution"];
+			$rowReturn[$x]["tunnel_exit"] = $row["tunnel_exit"];
+			$rowReturn[$x]["tunnel_exit_solution"] = $row["tunnel_exit_solution"];
 			$rowReturn[$x]["POEM_current"] = $row["POEM_current"];
 			$rowReturn[$x]["POEM_number_clips"] = $row["POEM_number_clips"];
 			$rowReturn[$x]["POEM_glucagon"] = $row["POEM_glucagon"];
@@ -452,9 +480,16 @@ $q = "Select * from `POEM` WHERE `id` = $key";
 			$rowReturn[$x]["POEM_GOJ_distance"] = $row["POEM_GOJ_distance"];
 			$rowReturn[$x]["POEM_incision_distance"] = $row["POEM_incision_distance"];
 			$rowReturn[$x]["POEM_incision_position"] = $row["POEM_incision_position"];
+			$rowReturn[$x]["submucosal_tunnel_bottom"] = $row["submucosal_tunnel_bottom"];
+			$rowReturn[$x]["myotomy_top"] = $row["myotomy_top"];
+			$rowReturn[$x]["myotomy_bottom"] = $row["myotomy_bottom"];
+			$rowReturn[$x]["myotomy_full_thickness_length_distal"] = $row["myotomy_full_thickness_length_distal"];
 			$rowReturn[$x]["POEM_myotomy_length"] = $row["POEM_myotomy_length"];
 			$rowReturn[$x]["POEM_perforation"] = $row["POEM_perforation"];
 			$rowReturn[$x]["POEM_IPB"] = $row["POEM_IPB"];
+			$rowReturn[$x]["IPB_solution"] = $row["IPB_solution"];
+			$rowReturn[$x]["tunnel_exit"] = $row["tunnel_exit"];
+			$rowReturn[$x]["tunnel_exit_solution"] = $row["tunnel_exit_solution"];
 			$rowReturn[$x]["POEM_current"] = $row["POEM_current"];
 			$rowReturn[$x]["POEM_number_clips"] = $row["POEM_number_clips"];
 			$rowReturn[$x]["POEM_glucagon"] = $row["POEM_glucagon"];
@@ -1008,6 +1043,34 @@ $q = "UPDATE `POEM` SET $implodeArray WHERE `id` = '$this->id'";
 	}
 
 	/**
+	 * @return submucosal_tunnel_bottom - varchar(100)
+	 */
+	public function getsubmucosal_tunnel_bottom(){
+		return $this->submucosal_tunnel_bottom;
+	}
+
+	/**
+	 * @return myotomy_top - varchar(100)
+	 */
+	public function getmyotomy_top(){
+		return $this->myotomy_top;
+	}
+
+	/**
+	 * @return myotomy_bottom - varchar(100)
+	 */
+	public function getmyotomy_bottom(){
+		return $this->myotomy_bottom;
+	}
+
+	/**
+	 * @return myotomy_full_thickness_length_distal - varchar(100)
+	 */
+	public function getmyotomy_full_thickness_length_distal(){
+		return $this->myotomy_full_thickness_length_distal;
+	}
+
+	/**
 	 * @return POEM_myotomy_length - int(2)
 	 */
 	public function getPOEM_myotomy_length(){
@@ -1026,6 +1089,27 @@ $q = "UPDATE `POEM` SET $implodeArray WHERE `id` = '$this->id'";
 	 */
 	public function getPOEM_IPB(){
 		return $this->POEM_IPB;
+	}
+
+	/**
+	 * @return IPB_solution - varchar(100)
+	 */
+	public function getIPB_solution(){
+		return $this->IPB_solution;
+	}
+
+	/**
+	 * @return tunnel_exit - varchar(11)
+	 */
+	public function gettunnel_exit(){
+		return $this->tunnel_exit;
+	}
+
+	/**
+	 * @return tunnel_exit_solution - varchar(100)
+	 */
+	public function gettunnel_exit_solution(){
+		return $this->tunnel_exit_solution;
 	}
 
 	/**
@@ -1610,6 +1694,34 @@ $q = "UPDATE `POEM` SET $implodeArray WHERE `id` = '$this->id'";
 	}
 
 	/**
+	 * @param Type: varchar(100)
+	 */
+	public function setsubmucosal_tunnel_bottom($submucosal_tunnel_bottom){
+		$this->submucosal_tunnel_bottom = $submucosal_tunnel_bottom;
+	}
+
+	/**
+	 * @param Type: varchar(100)
+	 */
+	public function setmyotomy_top($myotomy_top){
+		$this->myotomy_top = $myotomy_top;
+	}
+
+	/**
+	 * @param Type: varchar(100)
+	 */
+	public function setmyotomy_bottom($myotomy_bottom){
+		$this->myotomy_bottom = $myotomy_bottom;
+	}
+
+	/**
+	 * @param Type: varchar(100)
+	 */
+	public function setmyotomy_full_thickness_length_distal($myotomy_full_thickness_length_distal){
+		$this->myotomy_full_thickness_length_distal = $myotomy_full_thickness_length_distal;
+	}
+
+	/**
 	 * @param Type: int(2)
 	 */
 	public function setPOEM_myotomy_length($POEM_myotomy_length){
@@ -1628,6 +1740,27 @@ $q = "UPDATE `POEM` SET $implodeArray WHERE `id` = '$this->id'";
 	 */
 	public function setPOEM_IPB($POEM_IPB){
 		$this->POEM_IPB = $POEM_IPB;
+	}
+
+	/**
+	 * @param Type: varchar(100)
+	 */
+	public function setIPB_solution($IPB_solution){
+		$this->IPB_solution = $IPB_solution;
+	}
+
+	/**
+	 * @param Type: varchar(11)
+	 */
+	public function settunnel_exit($tunnel_exit){
+		$this->tunnel_exit = $tunnel_exit;
+	}
+
+	/**
+	 * @param Type: varchar(100)
+	 */
+	public function settunnel_exit_solution($tunnel_exit_solution){
+		$this->tunnel_exit_solution = $tunnel_exit_solution;
 	}
 
 	/**

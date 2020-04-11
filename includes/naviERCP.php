@@ -45,7 +45,15 @@ if ($userid) {
 					  </div>
 				  </div>';
     echo '
+	<div class="dropdown topnav"><button class="dropbtn">Polypectomy Tool&#9660;</button>
+	<div class="dropdown-content">
 
+		<a href="' . $roothttp . 'scripts/forms/PolypectomyAssessmentToolForm.php">New Assessment</a><hr>
+		<a href="' . $roothttp . 'scripts/forms/PolypectomyAssessmentToolTable.php">Edit assessments</a>
+
+
+	</div>
+</div>';
 
 
 

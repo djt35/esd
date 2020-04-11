@@ -295,10 +295,10 @@ class general {
 
 
 
-			echo '<table id="dataTable">';
+			echo '<table id="dataTable" class="table table-cards">';
 
 			echo '<thead>';
-			echo '<tr>';
+			echo '<tr class="table-divider">';
 
 			foreach ($data as $key=>$value){
 
@@ -2082,6 +2082,30 @@ INNER JOIN `imagesDraft` as c on b.`image_id` = c.`id` WHERE a.`approved` IS NUL
 
 		
 
+
+	 }
+
+	 public function getValueText($svalue1, $requiredIndex, $tableNameValues){
+
+		$q = "SELECT `".$svalue1."_t` FROM `$tableNameValues` WHERE `".$svalue1."` = ".$requiredIndex."";
+		//echo $q;
+		$result = $this->connection->RunQuery($q);
+		//print_r($result);
+
+		$returnString = "";
+
+		if ($result){
+			while($row = $result->fetch_array(MYSQLI_ASSOC)){
+
+
+
+				$returnString .= $row[$svalue1 . '_t'];
+				
+			
+			}
+		}
+
+		return $returnString;
 
 	 }
 
