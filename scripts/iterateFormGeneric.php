@@ -20,7 +20,7 @@
                     
                 } 
                 elseif (($value["Type"])==3){
-                    generateChecked(($value["Text"]), ($value["Name"]), ($value["Value1"]), ($value["Value2"]), $_POST[($value["Name"])], ($value["Message_t"])); 
+                    generateChecked(($value["Text"]), ($value["Name"]), ($value["Message_t"])); 
                     
                 }
                 elseif (($value["Type"])==4) {

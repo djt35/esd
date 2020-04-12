@@ -13,7 +13,7 @@ $userid = $_SESSION['user_id'];
       <div class="container px-lg-0">
         <!-- Logo -->
         <a class="navbar-brand mr-lg-5" href="<?php echo BASE_URL;?>/index.php">
-          <img alt="Image placeholder" src="<?php echo BASE_URL;?>/assets/logo/erm.png" id="navbar-logo" style="height: 50px;">
+          <img alt="Image placeholder" src="<?php echo BASE_URL;?>/assets/logo/edm.png" id="navbar-logo" style="height: 50px;">
         </a>
         <!-- Navbar collapse trigger -->
         <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">

@@ -517,9 +517,66 @@ function getDataFormElements(formName) {
 
     $(formString).not('button').each(function() {
 
-        name = $(this).attr("name");
-        
-        value = $(this).val();
+		if ($(this).is(':checkbox')){
+
+			name = $(this).attr("name");
+
+			if (checkedInputs){
+
+				console.log('found the checkedInputs array');
+
+				if ($(this).is(":checked")){
+
+					value = '1';
+
+					//console.log($(this).attr("name") + ' is checked');
+
+				} else {
+
+
+					console.log($(this).attr("name") + ' is NOT checked');
+
+					var stringToSearch = '#' + $(this).attr("id");
+
+					if (checkedInputs.indexOf(stringToSearch) > -1){
+
+						//console.log($(this).attr("name") + ' WAS checked PREVIOUSLY so value 0');
+
+						value = '0';
+
+					}else{
+
+						value = null;  //does not submit the element
+
+						//console.log($(this).attr("name") + ' WAS NOT checked PREVIOUSLY so value NULL');
+					}
+				
+					
+				}
+
+
+			}else{
+
+					if ($(this).is(":checked")){
+
+						value = '1';
+
+					} else {
+
+						value = '0';
+					}
+
+			}
+			
+			
+
+		}else{
+
+			name = $(this).attr("name");
+			
+			value = $(this).val();
+		
+		}
 
 
         names[name] = value;

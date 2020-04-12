@@ -2109,6 +2109,79 @@ INNER JOIN `imagesDraft` as c on b.`image_id` = c.`id` WHERE a.`approved` IS NUL
 
 	 }
 
+
+	 //database manipulations
+
+	 //update orders in pageLayout file
+	 public function editValuesPosition(){
+
+		for($x = 11; $x >= 5; $x=$x-1) {
+
+			$y = $x + 1;
+
+			//echo $y;
+
+			$q = "UPDATE `pageLayoutPOEM` SET `Position` = '$y' WHERE `Position` = $x";
+
+			//echo $q;
+
+			//$result = $this->connection->RunQuery($q);
+		
+			print_r($result);
+
+			if ($result == 1){
+				
+				echo $q . ' update performed <br/><br/>';
+
+			}
+			
+		
+		}
+
+		
+		
+		
+
+		//return $returnString;
+
+	 }	
+
+	 public function updateToVARCHAR($arrayFieldNames){
+
+		foreach($arrayFieldNames as $key=>$value) {
+
+			
+
+			//echo $y;
+
+			$q = "ALTER TABLE `POEM` CHANGE `$value` `$value` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;";
+
+			//echo $q;
+
+			$result = $this->connection->RunQuery($q);
+		
+			print_r($result);
+
+			if ($result == 1){
+				
+				echo $q . ' update performed <br/><br/>';
+
+			}else{
+
+				echo $q . ' update NOT performed <br/><br/>';
+			}
+			
+		
+		}
+
+		
+		
+		
+
+		//return $returnString;
+
+	 }	
+
 }
 
 

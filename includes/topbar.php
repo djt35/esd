@@ -3,7 +3,7 @@
       <div class="container px-0">
         <div class="navbar-nav align-items-center">
           <div class="d-none d-lg-inline-block">
-            <span class="navbar-text mr-3">Endoscopic Resection Master</span>
+            <span class="navbar-text mr-3">Endoscopy DataMaster</span>
           </div>
           <div>
             <ul class="nav">

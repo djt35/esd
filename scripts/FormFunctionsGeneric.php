@@ -66,6 +66,16 @@ function generateSelect($stext, $sname, $svalue1, $svalue2, $post, $message, $ge
 
 }
 
+function generateChecked($stext, $sname, $message){
+
+echo '<div class="custom-control custom-switch mt-4 mb-4">';
+
+echo '<input type="checkbox" value="1" name="' . $sname . '" class="custom-control-input form-control" id="' . $sname . '">';
+echo  '<label class="custom-control-label" for="' . $sname . '">' . $stext . '</label>';
+echo '</div>';
+
+}
+
 function errorMessage($errorTag)
 {
     echo "<td id=" . $errorTag . " class=\"errorTag\" style=\"max-width:30%;\"></td>\n</tr>\n";
